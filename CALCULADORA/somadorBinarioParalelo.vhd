@@ -2,10 +2,11 @@ LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.all;
 
 ENTITY somadorBinarioParalelo IS
+	GENERIC (n : INTEGER := 4)
 	PORT ( 
-		A, B	: IN  STD_LOGIC_VECTOR (3 DOWNTO 0);
+		A, B	: IN  STD_LOGIC_VECTOR (N-1 DOWNTO 0);
 		CIN		: IN  STD_LOGIC;
-		S		: OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
+		S		: OUT STD_LOGIC_VECTOR (N-1 DOWNTO 0);
 		COUT	: OUT STD_LOGIC
 	);
 
@@ -20,13 +21,15 @@ ARCHITECTURE funcionamento OF somadorBinarioParalelo IS
 		);
 	END COMPONENT;
 	
-	SIGNAL C : STD_LOGIC_VECTOR (2 DOWNTO 0);
+	SIGNAL C : STD_LOGIC_VECTOR (n DOWNTO 0);
 
 	BEGIN
 		
-		L1 : somadorCompleto PORT MAP (A(0), B(0), CIN,  S(0), C(1));
-		L2 : somadorCompleto PORT MAP (A(1), B(1), C(1), S(1), C(2));
-		L3 : somadorCompleto PORT MAP (A(2), B(2), C(2), S(2), C(3));
-		L4 : somadorCompleto PORT MAP (A(3), B(3), C(3), S(3), COUT);
+		C(0) <= CIN;
+		COUT <= C(n)
+
+		ABC: FOR i IN 0 TO n-1 GENERATE
+			SOMA: somadorCompleto PORT MAP (A(i), B(i), C(i), S(i), C(i+1));
+		END GENERATE ABC;
 		
 END funcionamento;

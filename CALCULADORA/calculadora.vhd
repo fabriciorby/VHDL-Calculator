@@ -5,7 +5,6 @@ USE IEEE.std_logic_unsigned.all;
 
 ENTITY CALC IS
 	PORT ( 
-
 		-- PWM --
 		CLOCK	: IN  STD_LOGIC;
 		RESET	: IN  STD_LOGIC;
@@ -53,7 +52,7 @@ ARCHITECTURE funcionamento OF CALC IS
 			RESET	: IN STD_LOGIC;
 			ENABLE	: IN STD_LOGIC;
 			DUTY	: IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-			COUT	: BUFFER STD_LOGIC
+			COUTP	: BUFFER STD_LOGIC
 		);
 	END COMPONENT;
 
@@ -66,12 +65,24 @@ ARCHITECTURE funcionamento OF CALC IS
 	END COMPONENT;
 
 	-- CONVERSOR PARA 7SEG
-		COMPONENT conv_7seg
+	COMPONENT conv_7seg
 		PORT (
 			DIGIT	:		IN STD_LOGIC_VECTOR (3 DOWNTO 0);
 			SEG		:		OUT STD_LOGIC_VECTOR (6 DOWNTO 0)
 		);
 	END COMPONENT;
+
+	-- BINARY TO BCD
+	COMPONENT binary_to_bcd
+    	PORT (
+			BINARY 		: IN  STD_LOGIC_VECTOR (11 DOWNTO 0);
+           	BCD_UNI 	: OUT  STD_LOGIC_VECTOR (3 DOWNTO 0);
+           	BCD_TEN 	: OUT  STD_LOGIC_VECTOR (3 DOWNTO 0);
+           	BCD_HUN 	: OUT  STD_LOGIC_VECTOR (3 DOWNTO 0);
+           	BCD_THO 	: OUT  STD_LOGIC_VECTOR (3 DOWNTO 0)
+        );
+	END COMPONENT;
+
 
 	-- BIBLIOTECA PARA CONTROLE DO TECLADO
 	COMPONENT kbdex_ctrl
@@ -92,12 +103,12 @@ ARCHITECTURE funcionamento OF CALC IS
 
 	-- DECLARACAO DE SIGNALS
 
-	SIGNAL ENTRADA 	: STD_LOGIC_VECTOR (3 DOWNTO 0);
+	SIGNAL ENTRADA 	: UNSIGNED (3 DOWNTO 0);
+	SIGNAL BINARY 	: UNSIGNED (15 DOWNTO 0);
 	SIGNAL DIGITOS 	: STD_LOGIC_VECTOR (15 DOWNTO 0);
-	SIGNAL DBUFFER 	: STD_LOGIC_VECTOR (15 DOWNTO 0);
-	SIGNAL A 		: STD_LOGIC_VECTOR (15 DOWNTO 0);
-	SIGNAL B 		: STD_LOGIC_VECTOR (15 DOWNTO 0);
-	SIGNAL COUT		: STD_LOGIC_VECTOR (3 DOWNTO 0);
+	SIGNAL A 		: UNSIGNED (11 DOWNTO 0);
+	SIGNAL B 		: UNSIGNED (11 DOWNTO 0);
+	SIGNAL COUT		: STD_LOGIC;
 
 	-- CONSTANTES DEFINIDAS EM conv_calc.vhd
 
@@ -108,7 +119,7 @@ ARCHITECTURE funcionamento OF CALC IS
 	CONSTANT ENT : STD_LOGIC_VECTOR (3 DOWNTO 0) := "1110";
 	CONSTANT BKS : STD_LOGIC_VECTOR (3 DOWNTO 0) := "1111";
 
-	CONSTANT VAZIO : STD_LOGIC_VECTOR (3 DOWNTO 0) := "0000000000000000";
+	CONSTANT VAZIO : STD_LOGIC_VECTOR (15 DOWNTO 0) := (OTHERS => '0');
 
 	BEGIN
 
@@ -121,57 +132,77 @@ ARCHITECTURE funcionamento OF CALC IS
 	BEGIN
 
 		CASE ENTRADA IS
+		
 			WHEN SUM =>
 
 				COUNT := 0;
 
 				IF (A = VAZIO) THEN 
-					A := DIGITOS;
-					DIGITOS := VAZIO;
+					A := BINARY;
+					BINARY := VAZIO;
 				ELSIF (B = VAZIO) THEN
-					B := DIGITOS;
-					IF (COUT(3) = '0') THEN
-						DIGITOS := DBUFFER;
-					ELSE
-						DIGITOS := VAZIO; --OVERFLOW
-					END IF;
-					DBUFFER := VAZIO;
+					B := BINARY;
+					BINARY <= A + B;
 					A := VAZIO;
 					B := VAZIO;
 				END IF;
 
 			WHEN SUB =>
+
 				COUNT := 0;
-				A := DIGITOS;
-				DIGITOS := VAZIO;
+
+				IF (A = VAZIO) THEN 
+					A := BINARY;
+					BINARY := VAZIO;
+				ELSIF (B = VAZIO) THEN
+					B := BINARY;
+					BINARY <= A - B;
+					A := VAZIO;
+					B := VAZIO;
+				END IF;
+
 			WHEN MUL =>
+
 				COUNT := 0;
-				A := DIGITOS;
-				DIGITOS := VAZIO;
+
+				IF (A = VAZIO) THEN 
+					A := BINARY;
+					BINARY := VAZIO;
+				ELSIF (B = VAZIO) THEN
+					B := BINARY;
+					BINARY <= A * B;
+					A := VAZIO;
+					B := VAZIO;
+				END IF;
+
 			WHEN DIV =>
+
 				COUNT := 0;
-				A := DIGITOS;
-				DIGITOS := VAZIO;
+
+				IF (A = VAZIO) THEN 
+					A := BINARY;
+					BINARY := VAZIO;
+				ELSIF (B = VAZIO) THEN
+					B := BINARY;
+					BINARY <= A / B;
+					A := VAZIO;
+					B := VAZIO;
+				END IF;
+
 			WHEN OTHERS =>
-				IF NOT (DIGITOS = VAZIO AND ENTRADA = "0000") THEN
+				IF NOT (DIGITOS = VAZIO AND ENTRADA = 0) THEN
 					CASE COUNT IS
 						WHEN 0 =>
-							DIGITOS (3 DOWNTO 0) = ENTRADA;
+							BINARY = ENTRADA;
 							COUNT := COUNT + 1
 						WHEN 1 =>
-							DIGITOS (7 DOWNTO 4) = DIGITOS (3 DOWNTO 0);
-							DIGITOS (3 DOWNTO 0) = ENTRADA;
+							BINARY <= BINARY + ENTRADA * 10
 							COUNT := COUNT + 1
 						WHEN 2 =>
-							DIGITOS (11 DOWNTO 8) = DIGITOS (7 DOWNTO 4);
-							DIGITOS (7 DOWNTO 4) = DIGITOS (3 DOWNTO 0);
-							DIGITOS (3 DOWNTO 0) = ENTRADA;
+							BINARY <= BINARY + ENTRADA * 100
 							COUNT := COUNT + 1
 						WHEN 3 =>
-							DIGITOS (15 DOWNTO 12) = DIGITOS (11 DOWNTO 8);
-							DIGITOS (11 DOWNTO 8) = DIGITOS (7 DOWNTO 4);
-							DIGITOS (7 DOWNTO 4) = DIGITOS (3 DOWNTO 0);
-							DIGITOS (3 DOWNTO 0) = ENTRADA;
+							BINARY <= BINARY + ENTRADA * 1000
 							COUNT := COUNT + 1
 					END CASE;
 				END IF;
@@ -183,29 +214,17 @@ ARCHITECTURE funcionamento OF CALC IS
 
 	pwn: PWN PORT MAP (
 		CLOCK, RESET, ENABLE, DUTY,
-		COUT
+		COUTP
 	);
 
 	dig_calc: conv_calc PORT MAP (
 		key0(7 DOWNTO 0), ENTRADA
 	);
 
-	somador0: somadorBinarioParalelo PORT MAP (
-		A (3 DOWNTO 0), B (3 DOWNTO 0), 0,
-		DBUFFER (3 DOWNTO 0), COUT(0)
-	);
-	somador1: somadorBinarioParalelo PORT MAP (
-		A (7 DOWNTO 4), B (7 DOWNTO 4), COUT(0),
-		DBUFFER (7 DOWNTO 4), COUT(1)
-	);
-	somador2: somadorBinarioParalelo PORT MAP (
-		A (11 DOWNTO 8), B (11 DOWNTO 8), COUT(1),
-		DBUFFER (7 DOWNTO 4), COUT(2)
-	);
-	somador3: somadorBinarioParalelo PORT MAP (
-		A (15 DOWNTO 12), B (15 DOWNTO 12), COUT(2),
-		DBUFFER (7 DOWNTO 4), COUT(3)
-	);
+	--somador: somadorBinarioParalelo GENERIC MAP(12) PORT MAP (
+	--	A, B, 0,
+	--	BINARY, COUT
+	--);
 
 	hexseg0: conv_7seg PORT MAP (
 		DIGITOS (3 DOWNTO 0), HEX0
@@ -218,6 +237,11 @@ ARCHITECTURE funcionamento OF CALC IS
 	);
 	hexseg3: conv_7seg PORT MAP (
 		DIGITOS (15 DOWNTO 12), HEX3
+	);
+
+	bin2bcd: binary_to_bcd PORT MAP (
+		BINARY, 	
+		DIGITOS (3 DOWNTO 0), DIGITOS (7 DOWNTO 4), DIGITOS (11 DOWNTO 8), DIGITOS (15 DOWNTO 12) 
 	);
 
 	kbd_ctrl : kbdex_ctrl GENERIC MAP(24000) PORT MAP(
