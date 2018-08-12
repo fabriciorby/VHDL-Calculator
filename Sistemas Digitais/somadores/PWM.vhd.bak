@@ -1,0 +1,59 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.all;
+
+ENTITY PWM IS
+	PORT ( 
+		CLOCK	: IN  BIT;
+		RESET	: IN  BIT;
+		ENABLE: IN  BIT;
+		DUTY	: IN  BIT_VECTOR(7 DOWNTO 0);
+		COUT	: BUFFER BIT_VECTOR (1 DOWNTO 0)
+	);
+
+END PWM;
+
+ARCHITECTURE funcionamento OF pwm IS
+		
+		
+	
+	BEGIN
+		
+		PROCESS (RESET, CLOCK, ENABLE)
+		
+		SIGNAL COUNT       : STD_LOGIC_VECTOR (7 downto 0);
+								
+		BEGIN
+								
+			IF RESET = '1' THEN
+			
+				COUNT = "00000000";
+				
+				COUT <= '0';
+				
+			ELSIF (ENABLE = '0') THEN
+							
+				COUT <= '0';
+				
+			ELSIF (CLOCK'EVENT AND CLOCK = '1') THEN				
+				
+				COUNT <= COUNT + '1';
+				
+				IF (COUNT <= DUTY) THEN
+				
+				COUT <= '1';
+				
+				ELSIF (COUNT = "11111111")
+				
+				COUNT <= "00000000";
+				
+				ELSE
+				
+				COUT <= '0';
+				
+				END IF;
+				
+			END IF;
+			
+		END PROCESS;
+			
+END funcionamento;

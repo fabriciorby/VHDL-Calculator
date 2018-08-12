@@ -1,0 +1,98 @@
+$comment
+	File created using the following command:
+		vcd file paridade_hierarquico.msim.vcd -direction
+$end
+$date
+	Mon Jun 11 23:37:01 2018
+$end
+$version
+	ModelSim Version 10.1d
+$end
+$timescale
+	1ps
+$end
+$scope module paridade_hierarquico_vlg_vec_tst $end
+$var reg 1 ! x1 $end
+$var reg 1 " x2 $end
+$var reg 1 # x3 $end
+$var wire 1 $ p $end
+$var wire 1 % sampler $end
+$scope module i1 $end
+$var wire 1 & gnd $end
+$var wire 1 ' vcc $end
+$var wire 1 ( unknown $end
+$var tri1 1 ) devclrn $end
+$var tri1 1 * devpor $end
+$var tri1 1 + devoe $end
+$var wire 1 , x2~combout $end
+$var wire 1 - x1~combout $end
+$var wire 1 . x3~combout $end
+$var wire 1 / inst1|f~0_combout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+0"
+0#
+0$
+x%
+0&
+1'
+x(
+1)
+1*
+1+
+0,
+0-
+0.
+0/
+$end
+#50000
+1#
+1.
+0%
+1/
+1$
+#100000
+1"
+0#
+1,
+0.
+1%
+#150000
+1#
+1.
+0%
+0/
+0$
+#200000
+1!
+0"
+0#
+1-
+0,
+0.
+1%
+1/
+1$
+#250000
+1#
+1.
+0%
+0/
+0$
+#300000
+1"
+0#
+1,
+0.
+1%
+#350000
+1#
+1.
+0%
+1/
+1$
+#400000

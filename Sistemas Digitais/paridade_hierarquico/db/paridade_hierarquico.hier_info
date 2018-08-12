@@ -1,0 +1,23 @@
+|paridade_hierarquico
+p <= xor_vhdl:inst1.f
+x1 => xor_vhdl:inst.x1
+x2 => xor_vhdl:inst.x2
+x3 => xor_vhdl:inst1.x2
+
+
+|paridade_hierarquico|xor_vhdl:inst1
+x1 => f.IN0
+x1 => f.IN0
+x2 => f.IN1
+x2 => f.IN1
+f <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|paridade_hierarquico|xor_vhdl:inst
+x1 => f.IN0
+x1 => f.IN0
+x2 => f.IN1
+x2 => f.IN1
+f <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+

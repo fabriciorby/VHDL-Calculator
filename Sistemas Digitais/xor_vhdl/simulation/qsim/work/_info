@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Programas Cyclone II\xor_vhdl\simulation\qsim
+vxor_vhdl
+Z1 IK[^[>[7<e6D38ScLWH@H;2
+Z2 VGeJ9hPWSo0:ahki2N0h>62
+Z3 dC:\Programas Cyclone II\xor_vhdl\simulation\qsim
+Z4 w1528767761
+Z5 8xor_vhdl.vo
+Z6 Fxor_vhdl.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|xor_vhdl.vo|
+Z9 o-work work -O0
+!i10b 1
+Z10 !s100 OiQH5;V1>W@2UGTJcKRXe1
+!s85 0
+Z11 !s108 1528767762.749000
+Z12 !s107 xor_vhdl.vo|
+!s101 -O0
+vxor_vhdl_vlg_check_tst
+!i10b 1
+Z13 !s100 `PKoPaQ:`k3WYRgE@eZfh3
+Z14 IJzF=d?>d4RJIE=QC0N1SD2
+Z15 Vj`:^nB>4TjGkXH:`?Zd1d0
+R3
+Z16 w1528767760
+Z17 8xor_vhdl.vt
+Z18 Fxor_vhdl.vt
+L0 59
+R7
+r1
+!s85 0
+31
+Z19 !s108 1528767762.968000
+Z20 !s107 xor_vhdl.vt|
+Z21 !s90 -work|work|xor_vhdl.vt|
+!s101 -O0
+R9
+vxor_vhdl_vlg_sample_tst
+!i10b 1
+Z22 !s100 DQOI<19glNDFgW]]El<Pb2
+Z23 I1W9C1bEkjABl4`S]W0ke`1
+Z24 VbO?]7CIfAHU_hFgA>X?0Q2
+R3
+R16
+R17
+R18
+L0 29
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9
+vxor_vhdl_vlg_vec_tst
+!i10b 1
+Z25 !s100 3^87NkPbz^W;Ve]ei`5Il0
+Z26 InoJNZI=[4KIj[H5A@MRh:1
+Z27 V2ZXzh8]l<dh4GXd=IRHJK2
+R3
+R16
+R17
+R18
+Z28 L0 154
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9

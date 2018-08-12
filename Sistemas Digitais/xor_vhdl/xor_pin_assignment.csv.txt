@@ -1,0 +1,4 @@
+To,Location
+f,PIN_U22
+x1,PIN_L22
+x2,PIN_L21

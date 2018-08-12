@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\Drive\Aulas\2018.2\Sistemas Digitais\Projetos VHDL Altera Cyclone II\Aula 7\binary4_to_bcd8_vector\simulation\qsim
+vbinary4_to_bcd8_vector
+Z1 I4k;9_L61SeF855LEMcz`:3
+Z2 Vla[=c13zEcY=nP@UGjeaC1
+Z3 dD:\Drive\Aulas\2018.2\Sistemas Digitais\Projetos VHDL Altera Cyclone II\Aula 7\binary4_to_bcd8_vector\simulation\qsim
+Z4 w1529895511
+Z5 8binary4_to_bcd8_vector.vo
+Z6 Fbinary4_to_bcd8_vector.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|binary4_to_bcd8_vector.vo|
+Z9 o-work work -O0
+!i10b 1
+Z10 !s100 SzkMM9NIz6Mi9j`k<cT2X2
+!s85 0
+Z11 !s108 1529895513.555000
+Z12 !s107 binary4_to_bcd8_vector.vo|
+!s101 -O0
+vbinary4_to_bcd8_vector_vlg_check_tst
+!i10b 1
+Z13 !s100 4^fP4X^ezo9YjQS]TIHXS2
+Z14 IdLc;mE[6GASG_Z:^l<93I0
+Z15 VBWoi0=Udl10_CFmS[PLf`2
+R3
+Z16 w1529895510
+Z17 8binary4_to_bcd8_vector.vt
+Z18 Fbinary4_to_bcd8_vector.vt
+L0 57
+R7
+r1
+!s85 0
+31
+Z19 !s108 1529895513.905000
+Z20 !s107 binary4_to_bcd8_vector.vt|
+Z21 !s90 -work|work|binary4_to_bcd8_vector.vt|
+!s101 -O0
+R9
+vbinary4_to_bcd8_vector_vlg_sample_tst
+!i10b 1
+Z22 !s100 @0ghNCZTFMO0lB?MkTFj61
+Z23 IaI965M3F`6]OO_X[ZHF4N2
+Z24 V9IANO2<fHj1i4gZHNndki0
+R3
+R16
+R17
+R18
+L0 29
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9
+vbinary4_to_bcd8_vector_vlg_vec_tst
+!i10b 1
+Z25 !s100 KN_Rk1LLkO?IkoFoN]FEP0
+Z26 IF@VgU6`LQ7VG1b:Ab>3=h0
+Z27 V;B9O14jS]HeKJG;;SV=fj2
+R3
+R16
+R17
+R18
+Z28 L0 285
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9
