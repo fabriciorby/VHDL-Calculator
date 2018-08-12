@@ -97,7 +97,7 @@ ARCHITECTURE funcionamento OF CALC IS
 	SIGNAL DBUFFER 	: STD_LOGIC_VECTOR (15 DOWNTO 0);
 	SIGNAL A 		: STD_LOGIC_VECTOR (15 DOWNTO 0);
 	SIGNAL B 		: STD_LOGIC_VECTOR (15 DOWNTO 0);
-	SIGNAL CIN		: STD_LOGIC_VECTOR (3 DOWNTO 0);
+	SIGNAL COUT		: STD_LOGIC_VECTOR (3 DOWNTO 0);
 
 	-- CONSTANTES DEFINIDAS EM conv_calc.vhd
 
@@ -130,7 +130,12 @@ ARCHITECTURE funcionamento OF CALC IS
 					DIGITOS := VAZIO;
 				ELSIF (B = VAZIO) THEN
 					B := DIGITOS;
-					DIGITOS := DBUFFER;
+					IF (COUT(3) = '0') THEN
+						DIGITOS := DBUFFER;
+					ELSE
+						DIGITOS := VAZIO; --OVERFLOW
+					END IF;
+					DBUFFER := VAZIO;
 					A := VAZIO;
 					B := VAZIO;
 				END IF;
@@ -187,19 +192,19 @@ ARCHITECTURE funcionamento OF CALC IS
 
 	somador0: somadorBinarioParalelo PORT MAP (
 		A (3 DOWNTO 0), B (3 DOWNTO 0), 0,
-		DBUFFER (3 DOWNTO 0), C(0)
+		DBUFFER (3 DOWNTO 0), COUT(0)
 	);
 	somador1: somadorBinarioParalelo PORT MAP (
-		A (7 DOWNTO 4), B (7 DOWNTO 4), C(0),
-		DBUFFER (7 DOWNTO 4), C(1)
+		A (7 DOWNTO 4), B (7 DOWNTO 4), COUT(0),
+		DBUFFER (7 DOWNTO 4), COUT(1)
 	);
 	somador2: somadorBinarioParalelo PORT MAP (
-		A (11 DOWNTO 8), B (11 DOWNTO 8), C(1),
-		DBUFFER (7 DOWNTO 4), C(2)
+		A (11 DOWNTO 8), B (11 DOWNTO 8), COUT(1),
+		DBUFFER (7 DOWNTO 4), COUT(2)
 	);
 	somador3: somadorBinarioParalelo PORT MAP (
-		A (15 DOWNTO 12), B (15 DOWNTO 12), C(2),
-		DBUFFER (7 DOWNTO 4), C(3)
+		A (15 DOWNTO 12), B (15 DOWNTO 12), COUT(2),
+		DBUFFER (7 DOWNTO 4), COUT(3)
 	);
 
 	hexseg0: conv_7seg PORT MAP (
