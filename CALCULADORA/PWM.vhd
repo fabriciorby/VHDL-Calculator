@@ -30,9 +30,9 @@ ARCHITECTURE funcionamento OF pwm IS
 			
 			COUT <= '0';
 			
-		ELSIF (ENABLE = '0') THEN
+		ELSIF (ENABLE = '1') THEN
 						
-			COUT <= '0';
+			COUT <= '1';
 			
 		ELSIF (CLOCK'EVENT AND CLOCK = '1') THEN				
 			
