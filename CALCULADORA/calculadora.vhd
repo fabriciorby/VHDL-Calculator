@@ -128,105 +128,142 @@ ARCHITECTURE funcionamento OF CALC IS
 
 	-- PROCESS
 
-	PROCESS(ENTRADA)
+	PROCESS(ENTRADA, RESET)
 
-	VARIABLE COUNT : INTEGER;
+	VARIABLE COUNT  : INTEGER;
+	VARIABLE OP		: INTEGER;
 	VARIABLE A 		: UNSIGNED (11 DOWNTO 0);
 	VARIABLE B 		: UNSIGNED (11 DOWNTO 0);
+	VARIABLE C 		: UNSIGNED (11 DOWNTO 0);
 
 	BEGIN
+		IF (RESET = '1') THEN 
+			BINARY <= BINARY*0;
+			A:=VAZIO;
+			B:=VAZIO;
+			C:=VAZIO;
+		ELSE
+			CASE ENTRADA IS
 
-		CASE ENTRADA IS
+				WHEN SUM =>
 
-			WHEN SUM =>
+					COUNT := 0;
+					OP := 1;
 
-				COUNT := 0;
+					IF (A = VAZIO) THEN 
+						A := BINARY;
+						--BINARY <= VAZIO;
+						C := A;
+					ELSIF (B = VAZIO) THEN
+						B := BINARY;
+						BINARY <= A + B;
+						C := B;
+						A := VAZIO;
+						B := VAZIO;
+					END IF;
 
-				IF (A = VAZIO) THEN 
-					A := BINARY;
-					BINARY <= VAZIO;
-				ELSIF (B = VAZIO) THEN
-					B := BINARY;
-					BINARY <= A + B;
-					A := VAZIO;
-					B := VAZIO;
-				END IF;
+				WHEN SUB =>
 
-			WHEN SUB =>
+					COUNT := 0;
+					OP := 2;
 
-				COUNT := 0;
+					IF (A = VAZIO) THEN 
+						A := BINARY;
+						--BINARY <= VAZIO;
+						C := A;
+					ELSIF (B = VAZIO) THEN
+						B := BINARY;
+						BINARY <= A - B;
+						C := B;
+						A := VAZIO;
+						B := VAZIO;
+					END IF;
 
-				IF (A = VAZIO) THEN 
-					A := BINARY;
-					BINARY <= VAZIO;
-				ELSIF (B = VAZIO) THEN
-					B := BINARY;
-					BINARY <= A - B;
-					A := VAZIO;
-					B := VAZIO;
-				END IF;
+				WHEN MUL =>
 
-			WHEN MUL =>
+					COUNT := 0;
+					OP := 3;
 
-				COUNT := 0;
+					IF (A = VAZIO) THEN 
+						A := BINARY;
+						--BINARY <= VAZIO;
+						C := A;
+					ELSIF (B = VAZIO) THEN
+						B := BINARY;
+						BINARY <= A * B;
+						C := B;
+						A := VAZIO;
+						B := VAZIO;
+					END IF;
 
-				IF (A = VAZIO) THEN 
-					A := BINARY;
-					BINARY <= VAZIO;
-				ELSIF (B = VAZIO) THEN
-					B := BINARY;
-					BINARY <= A * B;
-					A := VAZIO;
-					B := VAZIO;
-				END IF;
+				WHEN DIV =>
 
-			WHEN DIV =>
+					COUNT := 0;
+					OP := 4;
 
-				COUNT := 0;
+					IF (A = VAZIO) THEN 
+						A := BINARY;
+						--BINARY <= VAZIO;
+						C := A;
+					ELSIF (B = VAZIO) THEN
+						B := BINARY;
+						BINARY <= A / B;
+						C := B;
+						A := VAZIO;
+						B := VAZIO;
+					END IF;
 
-				IF (A = VAZIO) THEN 
-					A := BINARY;
-					BINARY <= VAZIO;
-				ELSIF (B = VAZIO) THEN
-					B := BINARY;
-					BINARY <= A / B;
-					A := VAZIO;
-					B := VAZIO;
-				END IF;
+				WHEN ENT =>
 
-			WHEN ENT =>
+					COUNT := 0;
 
-			WHEN BKS =>
-				IF NOT (COUNT = 0) THEN
-					CASE COUNT IS
-						WHEN 1 =>
-							BINARY <= BINARY*0;
-							COUNT := COUNT - 1;
-						WHEN OTHERS =>
-							BINARY <= BINARY/10;
-							COUNT := COUNT - 1;
-					END CASE;
-				END IF;
-			WHEN OTHERS =>
-				IF NOT (BINARY = VAZIO AND ENTRADA = 0) THEN
-					CASE COUNT IS
-						WHEN 0 =>
-							BINARY <= 0 + ENTRADA;
-							COUNT := COUNT + 1;
-						WHEN 1 =>
-							BINARY <= BINARY * 10 + ENTRADA;
-							COUNT := COUNT + 1;
-						WHEN 2 =>
-							BINARY <= BINARY * 100 + ENTRADA;
-							COUNT := COUNT + 1;
-						WHEN 3 =>
-							BINARY <= BINARY * 1000 + ENTRADA;
-							COUNT := COUNT + 1;
-						WHEN OTHERS =>
-					END CASE;
-				END IF;
-		END CASE;
+					IF (A = VAZIO) THEN 
+						A := BINARY;
+						BINARY <= VAZIO;
+					ELSIF (B = VAZIO) THEN
+						B := BINARY;
+						CASE OP IS 
+							WHEN 1 =>
+								BINARY <= BINARY + C;
+							WHEN 2 =>
+								BINARY <= BINARY - C;
+							WHEN 3 =>
+								BINARY <= BINARY * C;
+							WHEN 4 =>
+								BINARY <= BINARY / C;
+							WHEN OTHERS =>
+						END CASE;
+						BINARY <= A / B;
+						A := VAZIO;
+						B := VAZIO;
+						C := BINARY;
+					END IF;
 
+				WHEN BKS =>
+					IF NOT (COUNT = 0) THEN
+						BINARY <= BINARY*0;
+						COUNT := COUNT - 1;
+					END IF;
+				WHEN OTHERS =>
+					IF NOT (BINARY = VAZIO AND ENTRADA = 0) THEN
+						CASE COUNT IS
+							WHEN 0 =>
+								BINARY <= 0 + ENTRADA;
+								COUNT := COUNT + 1;
+							WHEN 1 =>
+								BINARY <= BINARY * 10 + ENTRADA;
+								COUNT := COUNT + 1;
+							WHEN 2 =>
+								BINARY <= BINARY * 100 + ENTRADA;
+								COUNT := COUNT + 1;
+							WHEN 3 =>
+								BINARY <= BINARY * 1000 + ENTRADA;
+								COUNT := COUNT + 1;
+							WHEN OTHERS =>
+						END CASE;
+					END IF;
+			END CASE;
+		END IF;
 	END PROCESS;
 
 	RESETN <= KEY(0);
