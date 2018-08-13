@@ -41,15 +41,15 @@ ARCHITECTURE funcionamento OF pwm IS
 			
 			IF (COUNT <= DUTY) THEN
 			
-			COUT <= CIN;
+				COUT <= CIN;
 			
 			ELSIF (COUNT = "11111111") THEN
 			
-			COUNT <= "00000000";
+				COUNT <= "00000000";
 			
 			ELSE
 			
-			COUT <= (OTHERS => '1');
+				COUT <= (OTHERS => '1');
 			
 			END IF;
 			
