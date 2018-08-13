@@ -1,9 +1,10 @@
 LIBRARY ieee ;
-USE ieee.std_logic_1164.all ;
+USE IEEE.STD_LOGIC_1164.all;
+USE IEEE.NUMERIC_STD.all;
 
 ENTITY conv_calc IS
-	port(	SCAN	: in STD_LOGIC_VECTOR (3 downto 0);
-			ENTRADA	: out STD_LOGIC_VECTOR (6 downto 0));
+	port(	SCAN	: in STD_LOGIC_VECTOR (7 downto 0);
+			ENTRADA	: out UNSIGNED (3 downto 0));
 END conv_calc;
 
 ARCHITECTURE structural OF conv_calc IS

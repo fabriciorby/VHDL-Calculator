@@ -1,0 +1,4 @@
+v 3
+file . "calculadora.vhd" "20180813002448.000" "20180812212639.641":
+  entity calc at 1( 0) + 0 on 17;
+  architecture funcionamento of calc at 45( 1580) + 0 on 18;
