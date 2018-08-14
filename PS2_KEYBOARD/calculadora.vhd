@@ -230,8 +230,9 @@ ARCHITECTURE funcionamento OF CALCULADORA IS
 							WHEN 3 =>
 								TEMP := BINARY * C;
 								BINARY <= TEMP (11 DOWNTO 0);
+								C := B;
 							WHEN 4 =>
-								BINARY <= BINARY / C;
+								BINARY <= C / BINARY;
 							WHEN OTHERS =>
 					END CASE;
 						
