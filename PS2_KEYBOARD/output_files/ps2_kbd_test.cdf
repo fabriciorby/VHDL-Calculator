@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP2C20F484) Path("D:/Drive/Aulas/2018.2/Sistemas Digitais/Projetos VHDL Altera Cyclone II/PS2_KEYBOARD/output_files/") File("ps2_kbd_test.sof") MfrSpec(OpMask(1));
+		Device PartName(EP2C20F484) Path("C:/Users/fabricio.yamamoto/Desktop/VHDL-master/PS2_KEYBOARD/output_files/") File("ps2_kbd_test.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

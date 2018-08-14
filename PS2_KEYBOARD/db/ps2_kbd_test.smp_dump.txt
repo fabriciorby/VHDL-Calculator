@@ -1,5 +1,5 @@
 
-State Machine - |ps2_kbd_test|kbdex_ctrl:kbd_ctrl|cmdstate
+State Machine - |CALCULADORA|kbdex_ctrl:kbd_ctrl|cmdstate
 Name cmdstate.CLEAR cmdstate.WAITACK1 cmdstate.SENDVAL cmdstate.SETLIGHTS cmdstate.WAITACK cmdstate.SEND cmdstate.SETCMD 
 cmdstate.SETCMD 0 0 0 0 0 0 0 
 cmdstate.SEND 0 0 0 0 0 1 1 
@@ -9,7 +9,7 @@ cmdstate.SENDVAL 0 0 1 0 0 0 1
 cmdstate.WAITACK1 0 1 0 0 0 0 1 
 cmdstate.CLEAR 1 0 0 0 0 0 1 
 
-State Machine - |ps2_kbd_test|kbdex_ctrl:kbd_ctrl|state
+State Machine - |CALCULADORA|kbdex_ctrl:kbd_ctrl|state
 Name state.CLRDP state.EXT1 state.EXT0 state.RELEASE state.CODE state.DECODE state.FETCH state.IDLE 
 state.IDLE 0 0 0 0 0 0 0 0 
 state.FETCH 0 0 0 0 0 0 1 1 

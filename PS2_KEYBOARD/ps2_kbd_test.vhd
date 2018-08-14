@@ -28,7 +28,7 @@ entity ps2_kbd_test is
 					
 		------------------------	PS2		--------------------------------
 		PS2_DAT 	:		inout	STD_LOGIC;	--	PS2 Data
-		PS2_CLK	:		inout	STD_LOGIC		--	PS2 Clock
+		PS2_CLK		:		inout	STD_LOGIC	--	PS2 Clock
 	);
 end;
 
@@ -57,7 +57,7 @@ architecture struct of ps2_kbd_test is
 	end component;
 		
 	signal CLOCKHZ, resetn 	: std_logic;
-	signal key0 				: std_logic_vector(15 downto 0);
+	signal key0 			: std_logic_vector(15 downto 0);
 	signal lights, key_on	: std_logic_vector( 2 downto 0);
 begin 
 	resetn <= KEY(0);
