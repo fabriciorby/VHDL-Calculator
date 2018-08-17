@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ps2_kbd_test
-Tue Aug 14 01:58:12 2018
+Fri Aug 17 03:35:44 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -13,23 +13,23 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis DSP Block Usage Summary
-  9. State Machine - |CALCULADORA|kbdex_ctrl:kbd_ctrl|cmdstate
- 10. State Machine - |CALCULADORA|kbdex_ctrl:kbd_ctrl|state
- 11. User-Specified and Inferred Latches
- 12. Registers Removed During Synthesis
- 13. Removed Registers Triggering Further Register Optimizations
- 14. General Register Statistics
- 15. Inverted Register Statistics
- 16. Multiplexer Restructuring Statistics (Restructuring Performed)
- 17. Parameter Settings for User Entity Instance: kbdex_ctrl:kbd_ctrl
- 18. Parameter Settings for User Entity Instance: kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl
- 19. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0
- 20. Parameter Settings for Inferred Entity Instance: lpm_divide:Div2
- 21. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
- 22. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult1
- 23. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
- 24. lpm_mult Parameter Settings by Entity Instance
+  8. State Machine - |CALCULADORA|kbdex_ctrl:kbd_ctrl|cmdstate
+  9. State Machine - |CALCULADORA|kbdex_ctrl:kbd_ctrl|state
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Parameter Settings for User Entity Instance: kbdex_ctrl:kbd_ctrl
+ 17. Parameter Settings for User Entity Instance: kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl
+ 18. Parameter Settings for User Entity Instance: TestaSomador:somador
+ 19. Parameter Settings for User Entity Instance: TestaSomador:somador|somadorBinarioParalelo:X1
+ 20. Parameter Settings for User Entity Instance: TestaSomador:somador|somadorBinarioParalelo:Y1
+ 21. Parameter Settings for User Entity Instance: TestaSomador:somador|somadorBinarioParalelo:somador
+ 22. Port Connectivity Checks: "TestaSomador:somador|somadorBinarioParalelo:somador"
+ 23. Port Connectivity Checks: "TestaSomador:somador|somadorBinarioParalelo:Y1"
+ 24. Port Connectivity Checks: "TestaSomador:somador|somadorBinarioParalelo:X1"
  25. Port Connectivity Checks: "kbdex_ctrl:kbd_ctrl"
  26. Elapsed Time Per Partition
  27. Analysis & Synthesis Messages
@@ -58,19 +58,19 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Aug 14 01:58:12 2018           ;
+; Analysis & Synthesis Status        ; Successful - Fri Aug 17 03:35:44 2018           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; ps2_kbd_test                                    ;
 ; Top-level Entity Name              ; CALCULADORA                                     ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 1,182                                           ;
-;     Total combinational functions  ; 1,142                                           ;
-;     Dedicated logic registers      ; 224                                             ;
-; Total registers                    ; 224                                             ;
+; Total logic elements               ; 623                                             ;
+;     Total combinational functions  ; 583                                             ;
+;     Dedicated logic registers      ; 200                                             ;
+; Total registers                    ; 200                                             ;
 ; Total pins                         ; 67                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
-; Embedded Multiplier 9-bit elements ; 4                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
 ; Total PLLs                         ; 0                                               ;
 +------------------------------------+-------------------------------------------------+
 
@@ -166,41 +166,26 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 4      ;
+; Number detected on machine ; 8      ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                               ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                           ; Library ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------+---------+
-; conv_calc.vhd                    ; yes             ; User VHDL File               ; C:/Users/fabricio.yamamoto/Desktop/VHDL-master/PS2_KEYBOARD/conv_calc.vhd              ;         ;
-; calculadora.vhd                  ; yes             ; User VHDL File               ; C:/Users/fabricio.yamamoto/Desktop/VHDL-master/PS2_KEYBOARD/calculadora.vhd            ;         ;
-; binary_to_bcd.vhd                ; yes             ; User VHDL File               ; C:/Users/fabricio.yamamoto/Desktop/VHDL-master/PS2_KEYBOARD/binary_to_bcd.vhd          ;         ;
-; ps2_iobase.vhd                   ; yes             ; User VHDL File               ; C:/Users/fabricio.yamamoto/Desktop/VHDL-master/PS2_KEYBOARD/ps2_iobase.vhd             ;         ;
-; conv_7seg.vhd                    ; yes             ; User VHDL File               ; C:/Users/fabricio.yamamoto/Desktop/VHDL-master/PS2_KEYBOARD/conv_7seg.vhd              ;         ;
-; kbdex_ctrl.vhd                   ; yes             ; User VHDL File               ; C:/Users/fabricio.yamamoto/Desktop/VHDL-master/PS2_KEYBOARD/kbdex_ctrl.vhd             ;         ;
-; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mult.tdf                         ;         ;
-; aglobal130.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                       ;         ;
-; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_add_sub.inc                      ;         ;
-; multcore.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/multcore.inc                         ;         ;
-; bypassff.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/bypassff.inc                         ;         ;
-; altshift.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altshift.inc                         ;         ;
-; db/mult_d8t.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/fabricio.yamamoto/Desktop/VHDL-master/PS2_KEYBOARD/db/mult_d8t.tdf            ;         ;
-; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_divide.tdf                       ;         ;
-; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/abs_divider.inc                      ;         ;
-; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sign_div_unsign.inc                  ;         ;
-; db/lpm_divide_cem.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/fabricio.yamamoto/Desktop/VHDL-master/PS2_KEYBOARD/db/lpm_divide_cem.tdf      ;         ;
-; db/sign_div_unsign_mlh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/fabricio.yamamoto/Desktop/VHDL-master/PS2_KEYBOARD/db/sign_div_unsign_mlh.tdf ;         ;
-; db/alt_u_div_e2f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/fabricio.yamamoto/Desktop/VHDL-master/PS2_KEYBOARD/db/alt_u_div_e2f.tdf       ;         ;
-; db/add_sub_lkc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/fabricio.yamamoto/Desktop/VHDL-master/PS2_KEYBOARD/db/add_sub_lkc.tdf         ;         ;
-; db/add_sub_mkc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/fabricio.yamamoto/Desktop/VHDL-master/PS2_KEYBOARD/db/add_sub_mkc.tdf         ;         ;
-; db/lpm_divide_rfm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/fabricio.yamamoto/Desktop/VHDL-master/PS2_KEYBOARD/db/lpm_divide_rfm.tdf      ;         ;
-; db/sign_div_unsign_5nh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/fabricio.yamamoto/Desktop/VHDL-master/PS2_KEYBOARD/db/sign_div_unsign_5nh.tdf ;         ;
-; db/alt_u_div_c5f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/fabricio.yamamoto/Desktop/VHDL-master/PS2_KEYBOARD/db/alt_u_div_c5f.tdf       ;         ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                  ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                           ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------+---------+
+; somadorCompleto.vhd              ; yes             ; User VHDL File  ; C:/Users/Fabricio/Desktop/VHDL/PS2_KEYBOARD/somadorCompleto.vhd        ;         ;
+; somadorBinarioParalelo.vhd       ; yes             ; User VHDL File  ; C:/Users/Fabricio/Desktop/VHDL/PS2_KEYBOARD/somadorBinarioParalelo.vhd ;         ;
+; conv_calc.vhd                    ; yes             ; User VHDL File  ; C:/Users/Fabricio/Desktop/VHDL/PS2_KEYBOARD/conv_calc.vhd              ;         ;
+; calculadora.vhd                  ; yes             ; User VHDL File  ; C:/Users/Fabricio/Desktop/VHDL/PS2_KEYBOARD/calculadora.vhd            ;         ;
+; binary_to_bcd.vhd                ; yes             ; User VHDL File  ; C:/Users/Fabricio/Desktop/VHDL/PS2_KEYBOARD/binary_to_bcd.vhd          ;         ;
+; ps2_iobase.vhd                   ; yes             ; User VHDL File  ; C:/Users/Fabricio/Desktop/VHDL/PS2_KEYBOARD/ps2_iobase.vhd             ;         ;
+; conv_7seg.vhd                    ; yes             ; User VHDL File  ; C:/Users/Fabricio/Desktop/VHDL/PS2_KEYBOARD/conv_7seg.vhd              ;         ;
+; kbdex_ctrl.vhd                   ; yes             ; User VHDL File  ; C:/Users/Fabricio/Desktop/VHDL/PS2_KEYBOARD/kbdex_ctrl.vhd             ;         ;
+; testaSomador.vhd                 ; yes             ; User VHDL File  ; C:/Users/Fabricio/Desktop/VHDL/PS2_KEYBOARD/testaSomador.vhd           ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -208,83 +193,60 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 1,182       ;
+; Estimated Total logic elements              ; 623         ;
 ;                                             ;             ;
-; Total combinational functions               ; 1142        ;
+; Total combinational functions               ; 583         ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 530         ;
-;     -- 3 input functions                    ; 348         ;
-;     -- <=2 input functions                  ; 264         ;
+;     -- 4 input functions                    ; 326         ;
+;     -- 3 input functions                    ; 96          ;
+;     -- <=2 input functions                  ; 161         ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 813         ;
-;     -- arithmetic mode                      ; 329         ;
+;     -- normal mode                          ; 479         ;
+;     -- arithmetic mode                      ; 104         ;
 ;                                             ;             ;
-; Total registers                             ; 224         ;
-;     -- Dedicated logic registers            ; 224         ;
+; Total registers                             ; 200         ;
+;     -- Dedicated logic registers            ; 200         ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
 ; I/O pins                                    ; 67          ;
-; Embedded Multiplier 9-bit elements          ; 4           ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
 ; Maximum fan-out node                        ; CLOCK_24[0] ;
 ; Maximum fan-out                             ; 106         ;
-; Total fan-out                               ; 4497        ;
+; Total fan-out                               ; 2663        ;
 ; Average fan-out                             ; 3.13        ;
 +---------------------------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                    ;
-+----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node             ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                ; Library Name ;
-+----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |CALCULADORA                           ; 1142 (333)        ; 224 (95)     ; 0           ; 4            ; 0       ; 2         ; 67   ; 0            ; |CALCULADORA                                                                                                                       ; work         ;
-;    |binary_to_bcd:bin2bcd|             ; 76 (76)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|binary_to_bcd:bin2bcd                                                                                                 ; work         ;
-;    |conv_7seg:hexseg0|                 ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|conv_7seg:hexseg0                                                                                                     ; work         ;
-;    |conv_7seg:hexseg1|                 ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|conv_7seg:hexseg1                                                                                                     ; work         ;
-;    |conv_7seg:hexseg2|                 ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|conv_7seg:hexseg2                                                                                                     ; work         ;
-;    |conv_7seg:hexseg3|                 ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|conv_7seg:hexseg3                                                                                                     ; work         ;
-;    |conv_calc:dig_calc|                ; 24 (24)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|conv_calc:dig_calc                                                                                                    ; work         ;
-;    |kbdex_ctrl:kbd_ctrl|               ; 231 (92)          ; 129 (55)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|kbdex_ctrl:kbd_ctrl                                                                                                   ; work         ;
-;       |ps2_iobase:ps2_ctrl|            ; 139 (139)         ; 74 (74)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl                                                                               ; work         ;
-;    |lpm_divide:Div0|                   ; 169 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|lpm_divide:Div0                                                                                                       ; work         ;
-;       |lpm_divide_rfm:auto_generated|  ; 169 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|lpm_divide:Div0|lpm_divide_rfm:auto_generated                                                                         ; work         ;
-;          |sign_div_unsign_5nh:divider| ; 169 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|lpm_divide:Div0|lpm_divide_rfm:auto_generated|sign_div_unsign_5nh:divider                                             ; work         ;
-;             |alt_u_div_c5f:divider|    ; 169 (168)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|lpm_divide:Div0|lpm_divide_rfm:auto_generated|sign_div_unsign_5nh:divider|alt_u_div_c5f:divider                       ; work         ;
-;                |add_sub_mkc:add_sub_1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|lpm_divide:Div0|lpm_divide_rfm:auto_generated|sign_div_unsign_5nh:divider|alt_u_div_c5f:divider|add_sub_mkc:add_sub_1 ; work         ;
-;    |lpm_divide:Div1|                   ; 173 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|lpm_divide:Div1                                                                                                       ; work         ;
-;       |lpm_divide_rfm:auto_generated|  ; 173 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|lpm_divide:Div1|lpm_divide_rfm:auto_generated                                                                         ; work         ;
-;          |sign_div_unsign_5nh:divider| ; 173 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|lpm_divide:Div1|lpm_divide_rfm:auto_generated|sign_div_unsign_5nh:divider                                             ; work         ;
-;             |alt_u_div_c5f:divider|    ; 173 (172)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|lpm_divide:Div1|lpm_divide_rfm:auto_generated|sign_div_unsign_5nh:divider|alt_u_div_c5f:divider                       ; work         ;
-;                |add_sub_mkc:add_sub_1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|lpm_divide:Div1|lpm_divide_rfm:auto_generated|sign_div_unsign_5nh:divider|alt_u_div_c5f:divider|add_sub_mkc:add_sub_1 ; work         ;
-;    |lpm_divide:Div2|                   ; 108 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|lpm_divide:Div2                                                                                                       ; work         ;
-;       |lpm_divide_cem:auto_generated|  ; 108 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|lpm_divide:Div2|lpm_divide_cem:auto_generated                                                                         ; work         ;
-;          |sign_div_unsign_mlh:divider| ; 108 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|lpm_divide:Div2|lpm_divide_cem:auto_generated|sign_div_unsign_mlh:divider                                             ; work         ;
-;             |alt_u_div_e2f:divider|    ; 108 (108)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|lpm_divide:Div2|lpm_divide_cem:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_e2f:divider                       ; work         ;
-;    |lpm_mult:Mult0|                    ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |CALCULADORA|lpm_mult:Mult0                                                                                                        ; work         ;
-;       |mult_d8t:auto_generated|        ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |CALCULADORA|lpm_mult:Mult0|mult_d8t:auto_generated                                                                                ; work         ;
-;    |lpm_mult:Mult1|                    ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |CALCULADORA|lpm_mult:Mult1                                                                                                        ; work         ;
-;       |mult_d8t:auto_generated|        ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |CALCULADORA|lpm_mult:Mult1|mult_d8t:auto_generated                                                                                ; work         ;
-+----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                ;
++-----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node              ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                           ; Library Name ;
++-----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------+--------------+
+; |CALCULADORA                            ; 583 (198)         ; 200 (71)     ; 0           ; 0            ; 0       ; 0         ; 67   ; 0            ; |CALCULADORA                                                                                  ; work         ;
+;    |TestaSomador:somador|               ; 25 (1)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|TestaSomador:somador                                                             ; work         ;
+;       |somadorBinarioParalelo:somador|  ; 24 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|TestaSomador:somador|somadorBinarioParalelo:somador                              ; work         ;
+;          |somadorCompleto:\ABC:0:SOMA|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|TestaSomador:somador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:0:SOMA  ; work         ;
+;          |somadorCompleto:\ABC:10:SOMA| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|TestaSomador:somador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:10:SOMA ; work         ;
+;          |somadorCompleto:\ABC:11:SOMA| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|TestaSomador:somador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:11:SOMA ; work         ;
+;          |somadorCompleto:\ABC:1:SOMA|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|TestaSomador:somador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:1:SOMA  ; work         ;
+;          |somadorCompleto:\ABC:3:SOMA|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|TestaSomador:somador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:3:SOMA  ; work         ;
+;          |somadorCompleto:\ABC:4:SOMA|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|TestaSomador:somador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:4:SOMA  ; work         ;
+;          |somadorCompleto:\ABC:5:SOMA|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|TestaSomador:somador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:5:SOMA  ; work         ;
+;          |somadorCompleto:\ABC:6:SOMA|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|TestaSomador:somador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:6:SOMA  ; work         ;
+;          |somadorCompleto:\ABC:7:SOMA|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|TestaSomador:somador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:7:SOMA  ; work         ;
+;          |somadorCompleto:\ABC:8:SOMA|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|TestaSomador:somador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:8:SOMA  ; work         ;
+;          |somadorCompleto:\ABC:9:SOMA|  ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|TestaSomador:somador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:9:SOMA  ; work         ;
+;    |binary_to_bcd:bin2bcd|              ; 77 (77)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|binary_to_bcd:bin2bcd                                                            ; work         ;
+;    |conv_7seg:hexseg0|                  ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|conv_7seg:hexseg0                                                                ; work         ;
+;    |conv_7seg:hexseg1|                  ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|conv_7seg:hexseg1                                                                ; work         ;
+;    |conv_7seg:hexseg2|                  ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|conv_7seg:hexseg2                                                                ; work         ;
+;    |conv_7seg:hexseg3|                  ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|conv_7seg:hexseg3                                                                ; work         ;
+;    |conv_calc:dig_calc|                 ; 24 (24)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|conv_calc:dig_calc                                                               ; work         ;
+;    |kbdex_ctrl:kbd_ctrl|                ; 231 (93)          ; 129 (55)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|kbdex_ctrl:kbd_ctrl                                                              ; work         ;
+;       |ps2_iobase:ps2_ctrl|             ; 138 (138)         ; 74 (74)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CALCULADORA|kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl                                          ; work         ;
++-----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+-----------------------------------------------------+
-; Analysis & Synthesis DSP Block Usage Summary        ;
-+---------------------------------------+-------------+
-; Statistic                             ; Number Used ;
-+---------------------------------------+-------------+
-; Simple Multipliers (9-bit)            ; 0           ;
-; Simple Multipliers (18-bit)           ; 2           ;
-; Embedded Multiplier Blocks            ; --          ;
-; Embedded Multiplier 9-bit elements    ; 4           ;
-; Signed Embedded Multipliers           ; 0           ;
-; Unsigned Embedded Multipliers         ; 2           ;
-; Mixed Sign Embedded Multipliers       ; 0           ;
-; Variable Sign Embedded Multipliers    ; 0           ;
-; Dedicated Input Shift Register Chains ; 0           ;
-+---------------------------------------+-------------+
-Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
 
 
 Encoding Type:  One-Hot
@@ -380,12 +342,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 224   ;
+; Total registers                              ; 200   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 176   ;
+; Number of registers using Asynchronous Clear ; 164   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 168   ;
+; Number of registers using Clock Enable       ; 145   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -406,18 +368,17 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
-; 3:1                ; 12 bits   ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |CALCULADORA|kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|count[7]  ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |CALCULADORA|kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|rcount[0] ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |CALCULADORA|kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|fcount[1] ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |CALCULADORA|kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|count[6]  ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |CALCULADORA|kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|rcount[2] ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |CALCULADORA|kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|fcount[3] ;
 ; 16:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |CALCULADORA|OP[1]                                             ;
-; 17:1               ; 12 bits   ; 132 LEs       ; 12 LEs               ; 120 LEs                ; Yes        ; |CALCULADORA|B[7]                                              ;
-; 10:1               ; 32 bits   ; 192 LEs       ; 64 LEs               ; 128 LEs                ; Yes        ; |CALCULADORA|COUNT[17]                                         ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |CALCULADORA|kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|rcount[7] ;
+; 17:1               ; 12 bits   ; 132 LEs       ; 12 LEs               ; 120 LEs                ; Yes        ; |CALCULADORA|A[1]                                              ;
+; 10:1               ; 32 bits   ; 192 LEs       ; 64 LEs               ; 128 LEs                ; Yes        ; |CALCULADORA|COUNT[21]                                         ;
+; 10:1               ; 4 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |CALCULADORA|BINARY[3]                                         ;
+; 18:1               ; 12 bits   ; 144 LEs       ; 12 LEs               ; 132 LEs                ; Yes        ; |CALCULADORA|B[5]                                              ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |CALCULADORA|BINARY[6]                                         ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |CALCULADORA|kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|rcount[5] ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |CALCULADORA|kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|fcount[5] ;
-; 17:1               ; 12 bits   ; 132 LEs       ; 12 LEs               ; 120 LEs                ; Yes        ; |CALCULADORA|A[3]                                              ;
-; 19:1               ; 12 bits   ; 144 LEs       ; 12 LEs               ; 132 LEs                ; Yes        ; |CALCULADORA|C[6]                                              ;
-; 17:1               ; 8 bits    ; 88 LEs        ; 40 LEs               ; 48 LEs                 ; Yes        ; |CALCULADORA|BINARY[6]                                         ;
-; 19:1               ; 3 bits    ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |CALCULADORA|BINARY[2]                                         ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |CALCULADORA|kbdex_ctrl:kbd_ctrl|state.CODE                    ;
 ; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |CALCULADORA|kbdex_ctrl:kbd_ctrl|Selector10                    ;
 ; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |CALCULADORA|kbdex_ctrl:kbd_ctrl|Selector9                     ;
@@ -444,174 +405,76 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0                   ;
-+------------------------------------------------+------------+---------------------+
-; Parameter Name                                 ; Value      ; Type                ;
-+------------------------------------------------+------------+---------------------+
-; AUTO_CARRY_CHAINS                              ; ON         ; AUTO_CARRY          ;
-; IGNORE_CARRY_BUFFERS                           ; OFF        ; IGNORE_CARRY        ;
-; AUTO_CASCADE_CHAINS                            ; ON         ; AUTO_CASCADE        ;
-; IGNORE_CASCADE_BUFFERS                         ; OFF        ; IGNORE_CASCADE      ;
-; LPM_WIDTHA                                     ; 12         ; Untyped             ;
-; LPM_WIDTHB                                     ; 12         ; Untyped             ;
-; LPM_WIDTHP                                     ; 24         ; Untyped             ;
-; LPM_WIDTHR                                     ; 24         ; Untyped             ;
-; LPM_WIDTHS                                     ; 1          ; Untyped             ;
-; LPM_REPRESENTATION                             ; UNSIGNED   ; Untyped             ;
-; LPM_PIPELINE                                   ; 0          ; Untyped             ;
-; LATENCY                                        ; 0          ; Untyped             ;
-; INPUT_A_IS_CONSTANT                            ; NO         ; Untyped             ;
-; INPUT_B_IS_CONSTANT                            ; NO         ; Untyped             ;
-; USE_EAB                                        ; OFF        ; Untyped             ;
-; MAXIMIZE_SPEED                                 ; 5          ; Untyped             ;
-; DEVICE_FAMILY                                  ; Cyclone II ; Untyped             ;
-; CARRY_CHAIN                                    ; MANUAL     ; Untyped             ;
-; APEX20K_TECHNOLOGY_MAPPER                      ; LUT        ; TECH_MAPPER_APEX20K ;
-; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO       ; Untyped             ;
-; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0          ; Untyped             ;
-; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0          ; Untyped             ;
-; CBXI_PARAMETER                                 ; mult_d8t   ; Untyped             ;
-; INPUT_A_FIXED_VALUE                            ; Bx         ; Untyped             ;
-; INPUT_B_FIXED_VALUE                            ; Bx         ; Untyped             ;
-; USE_AHDL_IMPLEMENTATION                        ; OFF        ; Untyped             ;
-+------------------------------------------------+------------+---------------------+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TestaSomador:somador ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; n              ; 12    ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_divide:Div2 ;
-+------------------------+----------------+------------------------+
-; Parameter Name         ; Value          ; Type                   ;
-+------------------------+----------------+------------------------+
-; LPM_WIDTHN             ; 12             ; Untyped                ;
-; LPM_WIDTHD             ; 4              ; Untyped                ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_PIPELINE           ; 0              ; Untyped                ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
-; CBXI_PARAMETER         ; lpm_divide_cem ; Untyped                ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
-+------------------------+----------------+------------------------+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TestaSomador:somador|somadorBinarioParalelo:X1 ;
++----------------+-------+--------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                               ;
++----------------+-------+--------------------------------------------------------------------+
+; n              ; 12    ; Signed Integer                                                     ;
++----------------+-------+--------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_divide:Div1 ;
-+------------------------+----------------+------------------------+
-; Parameter Name         ; Value          ; Type                   ;
-+------------------------+----------------+------------------------+
-; LPM_WIDTHN             ; 12             ; Untyped                ;
-; LPM_WIDTHD             ; 12             ; Untyped                ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_PIPELINE           ; 0              ; Untyped                ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
-; CBXI_PARAMETER         ; lpm_divide_rfm ; Untyped                ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
-+------------------------+----------------+------------------------+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TestaSomador:somador|somadorBinarioParalelo:Y1 ;
++----------------+-------+--------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                               ;
++----------------+-------+--------------------------------------------------------------------+
+; n              ; 12    ; Signed Integer                                                     ;
++----------------+-------+--------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult1                   ;
-+------------------------------------------------+------------+---------------------+
-; Parameter Name                                 ; Value      ; Type                ;
-+------------------------------------------------+------------+---------------------+
-; AUTO_CARRY_CHAINS                              ; ON         ; AUTO_CARRY          ;
-; IGNORE_CARRY_BUFFERS                           ; OFF        ; IGNORE_CARRY        ;
-; AUTO_CASCADE_CHAINS                            ; ON         ; AUTO_CASCADE        ;
-; IGNORE_CASCADE_BUFFERS                         ; OFF        ; IGNORE_CASCADE      ;
-; LPM_WIDTHA                                     ; 12         ; Untyped             ;
-; LPM_WIDTHB                                     ; 12         ; Untyped             ;
-; LPM_WIDTHP                                     ; 24         ; Untyped             ;
-; LPM_WIDTHR                                     ; 24         ; Untyped             ;
-; LPM_WIDTHS                                     ; 1          ; Untyped             ;
-; LPM_REPRESENTATION                             ; UNSIGNED   ; Untyped             ;
-; LPM_PIPELINE                                   ; 0          ; Untyped             ;
-; LATENCY                                        ; 0          ; Untyped             ;
-; INPUT_A_IS_CONSTANT                            ; NO         ; Untyped             ;
-; INPUT_B_IS_CONSTANT                            ; NO         ; Untyped             ;
-; USE_EAB                                        ; OFF        ; Untyped             ;
-; MAXIMIZE_SPEED                                 ; 5          ; Untyped             ;
-; DEVICE_FAMILY                                  ; Cyclone II ; Untyped             ;
-; CARRY_CHAIN                                    ; MANUAL     ; Untyped             ;
-; APEX20K_TECHNOLOGY_MAPPER                      ; LUT        ; TECH_MAPPER_APEX20K ;
-; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO       ; Untyped             ;
-; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0          ; Untyped             ;
-; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0          ; Untyped             ;
-; CBXI_PARAMETER                                 ; mult_d8t   ; Untyped             ;
-; INPUT_A_FIXED_VALUE                            ; Bx         ; Untyped             ;
-; INPUT_B_FIXED_VALUE                            ; Bx         ; Untyped             ;
-; USE_AHDL_IMPLEMENTATION                        ; OFF        ; Untyped             ;
-+------------------------------------------------+------------+---------------------+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TestaSomador:somador|somadorBinarioParalelo:somador ;
++----------------+-------+-------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                    ;
++----------------+-------+-------------------------------------------------------------------------+
+; n              ; 12    ; Signed Integer                                                          ;
++----------------+-------+-------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_divide:Div0 ;
-+------------------------+----------------+------------------------+
-; Parameter Name         ; Value          ; Type                   ;
-+------------------------+----------------+------------------------+
-; LPM_WIDTHN             ; 12             ; Untyped                ;
-; LPM_WIDTHD             ; 12             ; Untyped                ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_PIPELINE           ; 0              ; Untyped                ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
-; CBXI_PARAMETER         ; lpm_divide_rfm ; Untyped                ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
-+------------------------+----------------+------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "TestaSomador:somador|somadorBinarioParalelo:somador"                                ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; cin  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------+
-; lpm_mult Parameter Settings by Entity Instance         ;
-+---------------------------------------+----------------+
-; Name                                  ; Value          ;
-+---------------------------------------+----------------+
-; Number of entity instances            ; 2              ;
-; Entity Instance                       ; lpm_mult:Mult0 ;
-;     -- LPM_WIDTHA                     ; 12             ;
-;     -- LPM_WIDTHB                     ; 12             ;
-;     -- LPM_WIDTHP                     ; 24             ;
-;     -- LPM_REPRESENTATION             ; UNSIGNED       ;
-;     -- INPUT_A_IS_CONSTANT            ; NO             ;
-;     -- INPUT_B_IS_CONSTANT            ; NO             ;
-;     -- USE_EAB                        ; OFF            ;
-;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO           ;
-;     -- INPUT_A_FIXED_VALUE            ; Bx             ;
-;     -- INPUT_B_FIXED_VALUE            ; Bx             ;
-; Entity Instance                       ; lpm_mult:Mult1 ;
-;     -- LPM_WIDTHA                     ; 12             ;
-;     -- LPM_WIDTHB                     ; 12             ;
-;     -- LPM_WIDTHP                     ; 24             ;
-;     -- LPM_REPRESENTATION             ; UNSIGNED       ;
-;     -- INPUT_A_IS_CONSTANT            ; NO             ;
-;     -- INPUT_B_IS_CONSTANT            ; NO             ;
-;     -- USE_EAB                        ; OFF            ;
-;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO           ;
-;     -- INPUT_A_FIXED_VALUE            ; Bx             ;
-;     -- INPUT_B_FIXED_VALUE            ; Bx             ;
-+---------------------------------------+----------------+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "TestaSomador:somador|somadorBinarioParalelo:Y1"                                     ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; b    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; cin  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "TestaSomador:somador|somadorBinarioParalelo:X1"                                     ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; b    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; cin  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -629,7 +492,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:06     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -639,7 +502,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Aug 14 01:58:02 2018
+    Info: Processing started: Fri Aug 17 03:35:38 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ps2_kbd_test -c ps2_kbd_test
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file somadorcompleto.vhd
@@ -675,12 +538,15 @@ Info (12021): Found 2 design units, including 1 entities, in source file ps2_kbd
 Info (12021): Found 2 design units, including 1 entities, in source file kbdex_ctrl.vhd
     Info (12022): Found design unit 1: kbdex_ctrl-rtl
     Info (12023): Found entity 1: kbdex_ctrl
+Info (12021): Found 2 design units, including 1 entities, in source file testasomador.vhd
+    Info (12022): Found design unit 1: TestaSomador-funcionamento
+    Info (12023): Found entity 1: TestaSomador
 Info (12127): Elaborating entity "calculadora" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at calculadora.vhd(29): used implicit default value for signal "LEDG" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at calculadora.vhd(30): used implicit default value for signal "LEDR" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10036): Verilog HDL or VHDL warning at calculadora.vhd(103): object "DUTY" assigned a value but never read
-Warning (10541): VHDL Signal Declaration warning at calculadora.vhd(110): used implicit default value for signal "lights" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Critical Warning (10920): VHDL Incomplete Partial Association warning at calculadora.vhd(270): port or argument "KEY_CODE" has 32/48 unassociated elements
+Warning (10036): Verilog HDL or VHDL warning at calculadora.vhd(117): object "DUTY" assigned a value but never read
+Warning (10541): VHDL Signal Declaration warning at calculadora.vhd(124): used implicit default value for signal "lights" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10036): Verilog HDL or VHDL warning at calculadora.vhd(147): object "C" assigned a value but never read
+Warning (10542): VHDL Variable Declaration warning at calculadora.vhd(149): used initial value expression for variable "TEMP" because variable was never assigned a value
+Critical Warning (10920): VHDL Incomplete Partial Association warning at calculadora.vhd(280): port or argument "KEY_CODE" has 32/48 unassociated elements
 Info (12128): Elaborating entity "kbdex_ctrl" for hierarchy "kbdex_ctrl:kbd_ctrl"
 Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(125): signal "en" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(148): signal "fetchdata" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
@@ -721,79 +587,18 @@ Info (10041): Inferred latch for "selE0" at kbdex_ctrl.vhd(212)
 Info (12128): Elaborating entity "ps2_iobase" for hierarchy "kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl"
 Warning (10492): VHDL Process Statement warning at ps2_iobase.vhd(161): signal "sigsending" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12128): Elaborating entity "conv_calc" for hierarchy "conv_calc:dig_calc"
+Info (12128): Elaborating entity "TestaSomador" for hierarchy "TestaSomador:somador"
+Warning (10540): VHDL Signal Declaration warning at testaSomador.vhd(28): used explicit default value for signal "E" because signal was never assigned a value
+Warning (10036): Verilog HDL or VHDL warning at testaSomador.vhd(29): object "OVERFLOW" assigned a value but never read
+Info (12128): Elaborating entity "somadorBinarioParalelo" for hierarchy "TestaSomador:somador|somadorBinarioParalelo:X1"
+Info (12128): Elaborating entity "somadorCompleto" for hierarchy "TestaSomador:somador|somadorBinarioParalelo:X1|somadorCompleto:\ABC:0:SOMA"
 Info (12128): Elaborating entity "binary_to_bcd" for hierarchy "binary_to_bcd:bin2bcd"
 Info (12128): Elaborating entity "conv_7seg" for hierarchy "conv_7seg:hexseg0"
-Info (278001): Inferred 5 megafunctions from design logic
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult0"
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div2"
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1"
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult1"
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0"
-Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult0"
-Info (12133): Instantiated megafunction "lpm_mult:Mult0" with the following parameter:
-    Info (12134): Parameter "LPM_WIDTHA" = "12"
-    Info (12134): Parameter "LPM_WIDTHB" = "12"
-    Info (12134): Parameter "LPM_WIDTHP" = "24"
-    Info (12134): Parameter "LPM_WIDTHR" = "24"
-    Info (12134): Parameter "LPM_WIDTHS" = "1"
-    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
-    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
-    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
-Info (12021): Found 1 design units, including 1 entities, in source file db/mult_d8t.tdf
-    Info (12023): Found entity 1: mult_d8t
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div2"
-Info (12133): Instantiated megafunction "lpm_divide:Div2" with the following parameter:
-    Info (12134): Parameter "LPM_WIDTHN" = "12"
-    Info (12134): Parameter "LPM_WIDTHD" = "4"
-    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_cem.tdf
-    Info (12023): Found entity 1: lpm_divide_cem
-Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_mlh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_mlh
-Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_e2f.tdf
-    Info (12023): Found entity 1: alt_u_div_e2f
-Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_lkc.tdf
-    Info (12023): Found entity 1: add_sub_lkc
-Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_mkc.tdf
-    Info (12023): Found entity 1: add_sub_mkc
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div1"
-Info (12133): Instantiated megafunction "lpm_divide:Div1" with the following parameter:
-    Info (12134): Parameter "LPM_WIDTHN" = "12"
-    Info (12134): Parameter "LPM_WIDTHD" = "12"
-    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_rfm.tdf
-    Info (12023): Found entity 1: lpm_divide_rfm
-Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_5nh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_5nh
-Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_c5f.tdf
-    Info (12023): Found entity 1: alt_u_div_c5f
 Info (13000): Registers with preset signals will power-up high
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
     Warning (13310): Register "kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|ps2_data~en" is converted into an equivalent circuit using register "kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|ps2_data~en_emulated" and latch "kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|ps2_data~1"
     Warning (13310): Register "kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|send_rdy" is converted into an equivalent circuit using register "kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|send_rdy~_emulated" and latch "kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|send_rdy~1"
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDG[0]" is stuck at GND
-    Warning (13410): Pin "LEDG[1]" is stuck at GND
-    Warning (13410): Pin "LEDG[2]" is stuck at GND
-    Warning (13410): Pin "LEDG[3]" is stuck at GND
-    Warning (13410): Pin "LEDG[4]" is stuck at GND
-    Warning (13410): Pin "LEDG[5]" is stuck at GND
-    Warning (13410): Pin "LEDG[6]" is stuck at GND
-    Warning (13410): Pin "LEDG[7]" is stuck at GND
-    Warning (13410): Pin "LEDR[0]" is stuck at GND
-    Warning (13410): Pin "LEDR[1]" is stuck at GND
-    Warning (13410): Pin "LEDR[2]" is stuck at GND
-    Warning (13410): Pin "LEDR[3]" is stuck at GND
-    Warning (13410): Pin "LEDR[4]" is stuck at GND
-    Warning (13410): Pin "LEDR[5]" is stuck at GND
-    Warning (13410): Pin "LEDR[6]" is stuck at GND
-    Warning (13410): Pin "LEDR[7]" is stuck at GND
-    Warning (13410): Pin "LEDR[8]" is stuck at GND
-    Warning (13410): Pin "LEDR[9]" is stuck at GND
 Critical Warning (18061): Ignored Power-Up Level option on the following registers
     Critical Warning (18010): Register kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|fcount[7] will power up to Low
     Critical Warning (18010): Register kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|fcount[5] will power up to Low
@@ -818,16 +623,15 @@ Warning (21074): Design contains 16 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[7]"
     Warning (15610): No output dependent on input pin "SW[8]"
     Warning (15610): No output dependent on input pin "SW[9]"
-Info (21057): Implemented 1268 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 693 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 19 input pins
     Info (21059): Implemented 46 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 1197 logic cells
-    Info (21062): Implemented 4 DSP elements
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 84 warnings
-    Info: Peak virtual memory: 509 megabytes
-    Info: Processing ended: Tue Aug 14 01:58:12 2018
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:09
+    Info (21061): Implemented 626 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 67 warnings
+    Info: Peak virtual memory: 4653 megabytes
+    Info: Processing ended: Fri Aug 17 03:35:44 2018
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:05
 
 

@@ -4,13 +4,13 @@ USE IEEE.NUMERIC_STD.all;
 
 ENTITY conv_calc IS
 	port(	SCAN	: in STD_LOGIC_VECTOR (7 downto 0);
-			ENTRADA	: out UNSIGNED (3 downto 0));
+			ENTRADA	: out STD_LOGIC_VECTOR (3 downto 0));
 END conv_calc;
 
 ARCHITECTURE structural OF conv_calc IS
 BEGIN
 	WITH SCAN SELECT
-	ENTRADA <=   "0000" WHEN "01110000", -- 0	70
+	ENTRADA <=   	 "0000" WHEN "01110000", -- 0	70
 					 "0001" WHEN "01101001", -- 1	69
 					 "0010" WHEN "01110010", -- 2	72
 					 "0011" WHEN "01111010", -- 3	7A

@@ -1,0 +1,29 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.all;
+
+ENTITY TestaSomador IS
+	PORT ( 
+		A, B	: IN  STD_LOGIC_VECTOR (7 DOWNTO 0);
+		S		: OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+		COUT	: OUT STD_LOGIC
+	);
+
+END TestaSomador;
+
+ARCHITECTURE funcionamento OF TestaSomador IS
+
+	PORT ( 
+		A, B	: IN  STD_LOGIC_VECTOR (N-1 DOWNTO 0);
+		CIN		: IN  STD_LOGIC;
+		S		: OUT STD_LOGIC_VECTOR (N-1 DOWNTO 0);
+		COUT	: OUT STD_LOGIC
+	);
+	
+	BEGIN
+		
+	somador: somadorBinarioParalelo GENERIC MAP(12) PORT MAP (
+		A, B, 0,
+		BINARY, COUT
+	);
+		
+END funcionamento;

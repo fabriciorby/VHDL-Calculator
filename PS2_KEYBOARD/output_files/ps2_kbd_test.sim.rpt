@@ -1,0 +1,328 @@
+Simulator report for ps2_kbd_test
+Fri Aug 17 03:03:58 2018
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 76 nodes     ;
+; Simulation Coverage         ;     100.00 % ;
+; Total Number of Transitions ; 5928         ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
++-----------------------------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                                        ;
++--------------------------------------------------------------------------------------------+--------------------------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                                      ; Default Value ;
++--------------------------------------------------------------------------------------------+--------------------------------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                                                   ; Timing        ;
+; Start time                                                                                 ; 0 ns                                                         ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                                          ;               ;
+; Vector input source                                                                        ; C:/Users/Fabricio/Desktop/VHDL/PS2_KEYBOARD/testeSomador.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                                           ; On            ;
+; Check outputs                                                                              ; Off                                                          ; Off           ;
+; Report simulation coverage                                                                 ; On                                                           ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                                           ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                                           ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                                           ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                                          ; Off           ;
+; Detect glitches                                                                            ; Off                                                          ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                                          ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                                          ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                                          ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                                          ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                                           ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                                   ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                                          ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                                          ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                                         ; Auto          ;
++--------------------------------------------------------------------------------------------+--------------------------------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;     100.00 % ;
+; Total nodes checked                                 ; 76           ;
+; Total output ports checked                          ; 76           ;
+; Total output ports with complete 1/0-value coverage ; 76           ;
+; Total output ports with no 1/0-value coverage       ; 0            ;
+; Total output ports with no 1-value coverage         ; 0            ;
+; Total output ports with no 0-value coverage         ; 0            ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                                                                                          ;
++---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+------------------+
+; Node Name                                                                       ; Output Port Name                                                                ; Output Port Type ;
++---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+------------------+
+; |TestaSomador|COUT~0                                                            ; |TestaSomador|COUT~0                                                            ; out0             ;
+; |TestaSomador|COUT~1                                                            ; |TestaSomador|COUT~1                                                            ; out0             ;
+; |TestaSomador|COUT~2                                                            ; |TestaSomador|COUT~2                                                            ; out0             ;
+; |TestaSomador|COUT~3                                                            ; |TestaSomador|COUT~3                                                            ; out0             ;
+; |TestaSomador|COUT~4                                                            ; |TestaSomador|COUT~4                                                            ; out0             ;
+; |TestaSomador|A[0]                                                              ; |TestaSomador|A[0]                                                              ; out              ;
+; |TestaSomador|A[1]                                                              ; |TestaSomador|A[1]                                                              ; out              ;
+; |TestaSomador|A[2]                                                              ; |TestaSomador|A[2]                                                              ; out              ;
+; |TestaSomador|A[3]                                                              ; |TestaSomador|A[3]                                                              ; out              ;
+; |TestaSomador|A[4]                                                              ; |TestaSomador|A[4]                                                              ; out              ;
+; |TestaSomador|A[5]                                                              ; |TestaSomador|A[5]                                                              ; out              ;
+; |TestaSomador|A[6]                                                              ; |TestaSomador|A[6]                                                              ; out              ;
+; |TestaSomador|A[7]                                                              ; |TestaSomador|A[7]                                                              ; out              ;
+; |TestaSomador|B[0]                                                              ; |TestaSomador|B[0]                                                              ; out              ;
+; |TestaSomador|B[1]                                                              ; |TestaSomador|B[1]                                                              ; out              ;
+; |TestaSomador|B[2]                                                              ; |TestaSomador|B[2]                                                              ; out              ;
+; |TestaSomador|B[3]                                                              ; |TestaSomador|B[3]                                                              ; out              ;
+; |TestaSomador|B[4]                                                              ; |TestaSomador|B[4]                                                              ; out              ;
+; |TestaSomador|B[5]                                                              ; |TestaSomador|B[5]                                                              ; out              ;
+; |TestaSomador|B[6]                                                              ; |TestaSomador|B[6]                                                              ; out              ;
+; |TestaSomador|B[7]                                                              ; |TestaSomador|B[7]                                                              ; out              ;
+; |TestaSomador|S[0]                                                              ; |TestaSomador|S[0]                                                              ; pin_out          ;
+; |TestaSomador|S[1]                                                              ; |TestaSomador|S[1]                                                              ; pin_out          ;
+; |TestaSomador|S[2]                                                              ; |TestaSomador|S[2]                                                              ; pin_out          ;
+; |TestaSomador|S[3]                                                              ; |TestaSomador|S[3]                                                              ; pin_out          ;
+; |TestaSomador|S[4]                                                              ; |TestaSomador|S[4]                                                              ; pin_out          ;
+; |TestaSomador|S[5]                                                              ; |TestaSomador|S[5]                                                              ; pin_out          ;
+; |TestaSomador|S[6]                                                              ; |TestaSomador|S[6]                                                              ; pin_out          ;
+; |TestaSomador|S[7]                                                              ; |TestaSomador|S[7]                                                              ; pin_out          ;
+; |TestaSomador|COUT                                                              ; |TestaSomador|COUT                                                              ; pin_out          ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:7:SOMA|X1     ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:7:SOMA|X1     ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:7:SOMA|S      ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:7:SOMA|S      ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:6:SOMA|X1     ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:6:SOMA|X1     ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:6:SOMA|X2     ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:6:SOMA|X2     ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:6:SOMA|X3     ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:6:SOMA|X3     ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:6:SOMA|X4     ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:6:SOMA|X4     ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:6:SOMA|S      ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:6:SOMA|S      ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:6:SOMA|COUT~0 ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:6:SOMA|COUT~0 ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:6:SOMA|COUT   ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:6:SOMA|COUT   ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:5:SOMA|X1     ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:5:SOMA|X1     ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:5:SOMA|X2     ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:5:SOMA|X2     ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:5:SOMA|X3     ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:5:SOMA|X3     ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:5:SOMA|X4     ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:5:SOMA|X4     ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:5:SOMA|S      ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:5:SOMA|S      ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:5:SOMA|COUT~0 ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:5:SOMA|COUT~0 ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:5:SOMA|COUT   ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:5:SOMA|COUT   ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:4:SOMA|X1     ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:4:SOMA|X1     ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:4:SOMA|X2     ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:4:SOMA|X2     ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:4:SOMA|X3     ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:4:SOMA|X3     ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:4:SOMA|X4     ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:4:SOMA|X4     ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:4:SOMA|S      ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:4:SOMA|S      ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:4:SOMA|COUT~0 ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:4:SOMA|COUT~0 ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:4:SOMA|COUT   ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:4:SOMA|COUT   ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:3:SOMA|X1     ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:3:SOMA|X1     ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:3:SOMA|X2     ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:3:SOMA|X2     ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:3:SOMA|X3     ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:3:SOMA|X3     ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:3:SOMA|X4     ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:3:SOMA|X4     ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:3:SOMA|S      ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:3:SOMA|S      ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:3:SOMA|COUT~0 ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:3:SOMA|COUT~0 ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:3:SOMA|COUT   ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:3:SOMA|COUT   ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:2:SOMA|X1     ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:2:SOMA|X1     ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:2:SOMA|X2     ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:2:SOMA|X2     ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:2:SOMA|X3     ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:2:SOMA|X3     ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:2:SOMA|X4     ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:2:SOMA|X4     ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:2:SOMA|S      ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:2:SOMA|S      ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:2:SOMA|COUT~0 ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:2:SOMA|COUT~0 ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:2:SOMA|COUT   ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:2:SOMA|COUT   ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:1:SOMA|X1     ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:1:SOMA|X1     ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:1:SOMA|X2     ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:1:SOMA|X2     ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:1:SOMA|X3     ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:1:SOMA|X3     ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:1:SOMA|X4     ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:1:SOMA|X4     ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:1:SOMA|S      ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:1:SOMA|S      ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:1:SOMA|COUT~0 ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:1:SOMA|COUT~0 ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:1:SOMA|COUT   ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:1:SOMA|COUT   ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:0:SOMA|X3     ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:0:SOMA|X3     ; out0             ;
+; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:0:SOMA|S      ; |TestaSomador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:0:SOMA|S      ; out0             ;
++---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++-------------------------------------------------+
+; Missing 1-Value Coverage                        ;
++-----------+------------------+------------------+
+; Node Name ; Output Port Name ; Output Port Type ;
++-----------+------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++-------------------------------------------------+
+; Missing 0-Value Coverage                        ;
++-----------+------------------+------------------+
+; Node Name ; Output Port Name ; Output Port Type ;
++-----------+------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Fri Aug 17 03:03:58 2018
+Info: Command: quartus_sim --simulation_results_format=VWF ps2_kbd_test -c ps2_kbd_test
+Warning (136002): Ignored duplicate of assignment PARTITION_PRESERVE_HIGH_SPEED_TILES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IGNORE_SOURCE_FILE_CHANGES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_ALWAYS_USE_QXP_NETLIST for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_NEW_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_EXISTING_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_PIN_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_PROMOTE_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_TYPE for node ""
+Warning (136002): Ignored duplicate of assignment ALLOW_MULTIPLE_PERSONAS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_ASD_REGION_ID for node ""
+Warning (136002): Ignored duplicate of assignment CROSS_BOUNDARY_OPTIMIZATIONS for node ""
+Warning (136002): Ignored duplicate of assignment PROPAGATE_CONSTANTS_ON_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment PROPAGATE_INVERSIONS_ON_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS for node ""
+Warning (136002): Ignored duplicate of assignment MERGE_EQUIVALENT_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment MERGE_EQUIVALENT_BIDIRS for node ""
+Warning (136002): Ignored duplicate of assignment ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_EXTRACT_HARD_BLOCK_NODES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_SOURCE for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_BACK_ANNOTATION for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_COLOR for node ""
+Warning (136002): Ignored duplicate of assignment HIERARCHY_BLACKBOX_FILE for node "|"
+Warning (136002): Ignored duplicate of assignment PARTITION_PRESERVE_HIGH_SPEED_TILES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IGNORE_SOURCE_FILE_CHANGES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_ALWAYS_USE_QXP_NETLIST for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_NEW_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_EXISTING_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_PIN_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_PROMOTE_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_TYPE for node ""
+Warning (136002): Ignored duplicate of assignment ALLOW_MULTIPLE_PERSONAS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_ASD_REGION_ID for node ""
+Warning (136002): Ignored duplicate of assignment CROSS_BOUNDARY_OPTIMIZATIONS for node ""
+Warning (136002): Ignored duplicate of assignment PROPAGATE_CONSTANTS_ON_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment PROPAGATE_INVERSIONS_ON_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS for node ""
+Warning (136002): Ignored duplicate of assignment MERGE_EQUIVALENT_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment MERGE_EQUIVALENT_BIDIRS for node ""
+Warning (136002): Ignored duplicate of assignment ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_EXTRACT_HARD_BLOCK_NODES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_SOURCE for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_BACK_ANNOTATION for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_COLOR for node ""
+Warning (136002): Ignored duplicate of assignment HIERARCHY_BLACKBOX_FILE for node "|"
+Info (324025): Using vector source file "C:/Users/Fabricio/Desktop/VHDL/PS2_KEYBOARD/testeSomador.vwf"
+Warning (136002): Ignored duplicate of assignment PARTITION_PRESERVE_HIGH_SPEED_TILES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IGNORE_SOURCE_FILE_CHANGES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_ALWAYS_USE_QXP_NETLIST for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_NEW_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_EXISTING_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_PIN_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_PROMOTE_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_TYPE for node ""
+Warning (136002): Ignored duplicate of assignment ALLOW_MULTIPLE_PERSONAS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_ASD_REGION_ID for node ""
+Warning (136002): Ignored duplicate of assignment CROSS_BOUNDARY_OPTIMIZATIONS for node ""
+Warning (136002): Ignored duplicate of assignment PROPAGATE_CONSTANTS_ON_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment PROPAGATE_INVERSIONS_ON_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS for node ""
+Warning (136002): Ignored duplicate of assignment MERGE_EQUIVALENT_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment MERGE_EQUIVALENT_BIDIRS for node ""
+Warning (136002): Ignored duplicate of assignment ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_EXTRACT_HARD_BLOCK_NODES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_SOURCE for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_BACK_ANNOTATION for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_COLOR for node ""
+Warning (136002): Ignored duplicate of assignment HIERARCHY_BLACKBOX_FILE for node "|"
+Warning (136002): Ignored duplicate of assignment PARTITION_PRESERVE_HIGH_SPEED_TILES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IGNORE_SOURCE_FILE_CHANGES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_ALWAYS_USE_QXP_NETLIST for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_NEW_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_EXISTING_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_PIN_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_PROMOTE_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_TYPE for node ""
+Warning (136002): Ignored duplicate of assignment ALLOW_MULTIPLE_PERSONAS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_ASD_REGION_ID for node ""
+Warning (136002): Ignored duplicate of assignment CROSS_BOUNDARY_OPTIMIZATIONS for node ""
+Warning (136002): Ignored duplicate of assignment PROPAGATE_CONSTANTS_ON_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment PROPAGATE_INVERSIONS_ON_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS for node ""
+Warning (136002): Ignored duplicate of assignment MERGE_EQUIVALENT_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment MERGE_EQUIVALENT_BIDIRS for node ""
+Warning (136002): Ignored duplicate of assignment ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_EXTRACT_HARD_BLOCK_NODES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_SOURCE for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_BACK_ANNOTATION for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_COLOR for node ""
+Warning (136002): Ignored duplicate of assignment HIERARCHY_BLACKBOX_FILE for node "|"
+Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info (310002): Simulation partitioned into 1 sub-simulations
+Info (328053): Simulation coverage is     100.00 %
+Info (328052): Number of transitions in simulation is 5928
+Info (324045): Vector file ps2_kbd_test.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 92 warnings
+    Info: Peak virtual memory: 4462 megabytes
+    Info: Processing ended: Fri Aug 17 03:03:58 2018
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+
