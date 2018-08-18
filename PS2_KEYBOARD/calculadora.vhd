@@ -1,6 +1,6 @@
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.all;
---USE IEEE.STD_LOGIC_UNSIGNED.all;
+USE IEEE.STD_LOGIC_UNSIGNED.all;
 USE IEEE.NUMERIC_STD.all;
 
 
@@ -106,12 +106,12 @@ ARCHITECTURE funcionamento OF CALCULADORA IS
 			KEY_CODE	:	OUT	STD_LOGIC_VECTOR(47 DOWNTO 0)
 		);
 	END COMPONENT;
-
+	
 	-- DECLARACAO DE SIGNALS
 	
 	CONSTANT VAZIO : STD_LOGIC_VECTOR (11 DOWNTO 0) := (OTHERS => '0');
 	
-	SIGNAL COUT 	: STD_LOGIC;
+	SIGNAL COUT 	: STD_LOGIC := '0';
 	SIGNAL COUTP 	: STD_LOGIC_VECTOR (15 DOWNTO 0);
 	SIGNAL SOMA 	: STD_LOGIC_VECTOR (11 DOWNTO 0) := VAZIO;
 	SIGNAL DUTY	: 	 STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -124,8 +124,6 @@ ARCHITECTURE funcionamento OF CALCULADORA IS
 	SIGNAL lights	: STD_LOGIC_VECTOR (2 DOWNTO 0);
 	SIGNAL key_on	: STD_LOGIC_VECTOR (2 DOWNTO 0);
 	SIGNAL key_code	: STD_LOGIC_VECTOR (47 DOWNTO 0);
-	SIGNAL A 		: STD_LOGIC_VECTOR (11 DOWNTO 0) := VAZIO;
-	SIGNAL B 		: STD_LOGIC_VECTOR (11 DOWNTO 0) := VAZIO;
 
 	-- CONSTANTES DEFINIDAS EM conv_calc.vhd
 
@@ -144,22 +142,24 @@ ARCHITECTURE funcionamento OF CALCULADORA IS
 
 	VARIABLE COUNT  : INTEGER := 0;
 	VARIABLE OP		: INTEGER := 0;
+	VARIABLE A 		: STD_LOGIC_VECTOR (11 DOWNTO 0) := VAZIO;
+	VARIABLE B 		: STD_LOGIC_VECTOR (11 DOWNTO 0) := VAZIO;
 	VARIABLE C 		: STD_LOGIC_VECTOR (11 DOWNTO 0) := VAZIO;
 	VARIABLE D 		: STD_LOGIC_VECTOR (11 DOWNTO 0) := VAZIO;
 	VARIABLE TEMP	: STD_LOGIC_VECTOR (23 DOWNTO 0) := (OTHERS => '0');
-	VARIABLE X		: STD_LOGIC_VECTOR (3 DOWNTO 0)	 := (OTHERS => '0');
 
 	BEGIN
 		IF (RESET = '0') THEN 
 			BINARY <= VAZIO;
-			A<=VAZIO;
-			B<=VAZIO;
+			A:=VAZIO;
+			B:=VAZIO;
 			C:=VAZIO;
+			D:=VAZIO;
+			OP:= 0;
+			COUT <= '0';
 		ELSIF (key_on(0)'EVENT AND key_on(0) = '1') THEN
-		
-			X := ENTRADA;
-			
-			CASE X IS
+					
+			CASE ENTRADA IS
 
 				WHEN SUM =>
 
@@ -167,9 +167,9 @@ ARCHITECTURE funcionamento OF CALCULADORA IS
 					OP := 1;
 
 					IF (A = VAZIO) THEN 
-						A <= BINARY;
+						A := BINARY;
 						C := A;
-						B <= VAZIO;
+						B := VAZIO;
 					END IF;
 
 				WHEN SUB =>
@@ -178,10 +178,11 @@ ARCHITECTURE funcionamento OF CALCULADORA IS
 					OP := 2;
 
 					IF (A = VAZIO) THEN 
-						A <= BINARY;
+						A := BINARY;
 						C := A;
-						B <= VAZIO;
+						B := VAZIO;
 					END IF;
+
 
 				WHEN MUL =>
 
@@ -189,17 +190,17 @@ ARCHITECTURE funcionamento OF CALCULADORA IS
 					OP := 3;
 
 					IF (A = VAZIO) THEN 
-						A <= BINARY;
+						A := BINARY;
 						--BINARY <= VAZIO;
 						C := A;
-						B <= VAZIO;
+						B := VAZIO;
 					ELSIF (B = VAZIO) THEN
-						B <= BINARY;
+						B := BINARY;
 						--TEMP := A * B;
 						BINARY <= TEMP (11 DOWNTO 0);
 						C := B;
-						A <= VAZIO;
-						B <= VAZIO;
+						A := VAZIO;
+						B := VAZIO;
 					END IF;
 
 				WHEN DIV =>
@@ -208,34 +209,47 @@ ARCHITECTURE funcionamento OF CALCULADORA IS
 					OP := 4;
 
 					IF (A = VAZIO) THEN 
-						A <= BINARY;
+						A := BINARY;
 						--BINARY <= VAZIO;
 						C := A;
-						B <= VAZIO;
+						B := VAZIO;
 					ELSIF (B = VAZIO) THEN
-						B <= BINARY;
+						B := BINARY;
 						--BINARY <= A / B;
 						C := B;
-						A <= VAZIO;
-						B <= VAZIO;
+						A := VAZIO;
+						B := VAZIO;
 					END IF;
 
 				WHEN ENT =>
 
 					COUNT := 0;
 
-					--IF (B = VAZIO) THEN 
-						--A := BINARY;
-						--BINARY <= VAZIO;
 					IF (B = VAZIO) THEN
-						B <= BINARY;
+						B := BINARY;
 					END IF;
 					
 					CASE OP IS 
 							WHEN 1 =>
-								BINARY <= SOMA;
+								D := C + BINARY;
+								IF (C(11) = '0') AND (BINARY(11) = '0') THEN 
+									IF D(11) = '1' THEN
+										--OVERFLOW
+										COUT <= '1';
+									END IF;
+								END IF;
+								BINARY <= C + BINARY;
+								C := B;
 							WHEN 2 =>
-								BINARY <= SOMA;
+								D := C - B;
+								IF (C(11) = '1') AND (B(11) = '0') THEN 
+									IF D(11) = '0' THEN
+										--UNDERFLOW
+										COUT <= '1';
+									END IF;
+								END IF;
+								BINARY <= C - B;
+								C := C - B;
 							WHEN 3 =>
 								--TEMP := BINARY * C;
 								BINARY <= TEMP (11 DOWNTO 0);
@@ -244,8 +258,8 @@ ARCHITECTURE funcionamento OF CALCULADORA IS
 								--BINARY <= C / BINARY;
 							WHEN OTHERS =>
 					END CASE;
-						
-					A <= VAZIO;
+					
+					A := VAZIO;
 					
 				WHEN BKS =>
 					IF NOT (COUNT = 0) THEN
@@ -256,11 +270,15 @@ ARCHITECTURE funcionamento OF CALCULADORA IS
 					IF NOT (BINARY = VAZIO AND ENTRADA = "0000") THEN
 						CASE COUNT IS
 							WHEN 0 =>
-								BINARY <= "00000000"&ENTRADA;
+								BINARY <= VAZIO + ENTRADA;
 								COUNT := COUNT + 1;
 							WHEN 1 TO 3 =>
-								--TEMP := BINARY * 10 + ENTRADA;
-								BINARY <= TEMP (11 DOWNTO 0);
+								D := BINARY + BINARY + BINARY + BINARY + BINARY + BINARY + BINARY + BINARY + BINARY + BINARY + ENTRADA;
+								IF (D(11) = '1') THEN 
+									--OVERFLOW
+									COUT <= '1';
+								END IF;
+								BINARY <= BINARY + BINARY + BINARY + BINARY + BINARY + BINARY + BINARY + BINARY + BINARY + BINARY + ENTRADA;
 								COUNT := COUNT + 1;
 							WHEN OTHERS =>
 						END CASE;
@@ -288,10 +306,10 @@ ARCHITECTURE funcionamento OF CALCULADORA IS
 		key0(7 DOWNTO 0), ENTRADA
 	);
 
-	somador: testaSomador GENERIC MAP(12) PORT MAP (
-		A, B,
-		SOMA, COUT
-	);
+	--somador: testaSomador GENERIC MAP(12) PORT MAP (
+	--	A, B,
+	--	SOMA, COUT
+	--);
 
 	--TRANSFORMA OS NUMEROS BINARIOS EM 4 CASAS DECIMAIS
 
@@ -302,28 +320,28 @@ ARCHITECTURE funcionamento OF CALCULADORA IS
 
 	--CONTROLA O BRILHO DO DISPLAY DE 7 SEGMENTOS
 
---	controlador: PWM PORT MAP (
---		CLOCK_50,
---		RESET, 
---		RESETN, --KEY(0)
---		DUTY, 
---		DIGITOS,
---		COUTP
---	);
+	controlador: PWM PORT MAP (
+		CLOCK_50,
+		RESET, 
+		RESETN, --KEY(0)
+		DUTY, 
+		DIGITOS,
+		COUTP
+	);
 
 	--MOSTRA OS NUMEROS NO DISPLAY DE 7 SEGMENTOS COM BRILHO CONTROLADO
 
 	hexseg0: conv_7seg PORT MAP (
-		DIGITOS (3 DOWNTO 0), HEX0
+		COUTP (3 DOWNTO 0), HEX0
 	);
 	hexseg1: conv_7seg PORT MAP (
-		DIGITOS (7 DOWNTO 4), HEX1
+		COUTP (7 DOWNTO 4), HEX1
 	);
 	hexseg2: conv_7seg PORT MAP (
-		DIGITOS (11 DOWNTO 8), HEX2
+		COUTP (11 DOWNTO 8), HEX2
 	);
 	hexseg3: conv_7seg PORT MAP (
-		DIGITOS (15 DOWNTO 12), HEX3
+		COUTP (15 DOWNTO 12), HEX3
 	);
 	
 	--CHECA OVERFLOW

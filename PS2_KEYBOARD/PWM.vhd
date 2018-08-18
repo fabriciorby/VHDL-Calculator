@@ -10,7 +10,7 @@ ENTITY PWM IS
 		ENABLE	: IN  STD_LOGIC;
 		DUTY		: IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
 		CIN		: IN  STD_LOGIC_VECTOR(15 DOWNTO 0);
-		COUT		: BUFFER STD_LOGIC_VECTOR(15 DOWNTO 0)
+		COUTP		: BUFFER STD_LOGIC_VECTOR(15 DOWNTO 0)
 	);
 
 END PWM;
@@ -25,15 +25,15 @@ ARCHITECTURE funcionamento OF pwm IS
 										
 	BEGIN
 							
-		IF RESET = '1' THEN
+		IF RESET = '0' THEN
 		
 			COUNT <= "00000000";
 			
-			COUT <= (OTHERS => '1');
+			COUTP <= (OTHERS => '1');
 			
-		ELSIF (ENABLE = '1') THEN
+		ELSIF (ENABLE = '0') THEN
 						
-			COUT <= CIN;
+			COUTP <= CIN;
 
 		ELSIF (CLOCK'EVENT AND CLOCK = '1') THEN				
 			
@@ -41,7 +41,7 @@ ARCHITECTURE funcionamento OF pwm IS
 			
 			IF (COUNT <= DUTY) THEN
 			
-				COUT <= CIN;
+				COUTP <= CIN;
 			
 			ELSIF (COUNT = "11111111") THEN
 			
@@ -49,7 +49,7 @@ ARCHITECTURE funcionamento OF pwm IS
 			
 			ELSE
 			
-				COUT <= (OTHERS => '1');
+				COUTP <= (OTHERS => '1');
 			
 			END IF;
 			

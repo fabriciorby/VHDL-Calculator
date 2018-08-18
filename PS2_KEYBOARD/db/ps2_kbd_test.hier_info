@@ -3,9 +3,68 @@ CLOCK_24[0] => kbdex_ctrl:kbd_ctrl.CLK
 CLOCK_24[1] => ~NO_FANOUT~
 CLOCK_27[0] => ~NO_FANOUT~
 CLOCK_27[1] => ~NO_FANOUT~
-CLOCK_50 => ~NO_FANOUT~
+CLOCK_50 => PWM:controlador.CLOCK
 KEY[0] => kbdex_ctrl:kbd_ctrl.RESETN
+KEY[0] => PWM:controlador.ENABLE
 KEY[1] => kbdex_ctrl:kbd_ctrl.EN
+KEY[1] => PWM:controlador.RESET
+KEY[1] => COUT.ACLR
+KEY[1] => BINARY[0].ACLR
+KEY[1] => BINARY[1].ACLR
+KEY[1] => BINARY[2].ACLR
+KEY[1] => BINARY[3].ACLR
+KEY[1] => BINARY[4].ACLR
+KEY[1] => BINARY[5].ACLR
+KEY[1] => BINARY[6].ACLR
+KEY[1] => BINARY[7].ACLR
+KEY[1] => BINARY[8].ACLR
+KEY[1] => BINARY[9].ACLR
+KEY[1] => BINARY[10].ACLR
+KEY[1] => BINARY[11].ACLR
+KEY[1] => OP[0].ACLR
+KEY[1] => OP[1].ACLR
+KEY[1] => OP[2].ACLR
+KEY[1] => OP[3].ACLR
+KEY[1] => OP[4].ACLR
+KEY[1] => OP[5].ACLR
+KEY[1] => OP[6].ACLR
+KEY[1] => OP[7].ACLR
+KEY[1] => OP[8].ACLR
+KEY[1] => OP[9].ACLR
+KEY[1] => OP[10].ACLR
+KEY[1] => OP[11].ACLR
+KEY[1] => OP[12].ACLR
+KEY[1] => OP[13].ACLR
+KEY[1] => OP[14].ACLR
+KEY[1] => OP[15].ACLR
+KEY[1] => OP[16].ACLR
+KEY[1] => OP[17].ACLR
+KEY[1] => OP[18].ACLR
+KEY[1] => OP[19].ACLR
+KEY[1] => OP[20].ACLR
+KEY[1] => OP[21].ACLR
+KEY[1] => OP[22].ACLR
+KEY[1] => OP[23].ACLR
+KEY[1] => OP[24].ACLR
+KEY[1] => OP[25].ACLR
+KEY[1] => OP[26].ACLR
+KEY[1] => OP[27].ACLR
+KEY[1] => OP[28].ACLR
+KEY[1] => OP[29].ACLR
+KEY[1] => OP[30].ACLR
+KEY[1] => OP[31].ACLR
+KEY[1] => C[0].ACLR
+KEY[1] => C[1].ACLR
+KEY[1] => C[2].ACLR
+KEY[1] => C[3].ACLR
+KEY[1] => C[4].ACLR
+KEY[1] => C[5].ACLR
+KEY[1] => C[6].ACLR
+KEY[1] => C[7].ACLR
+KEY[1] => C[8].ACLR
+KEY[1] => C[9].ACLR
+KEY[1] => C[10].ACLR
+KEY[1] => C[11].ACLR
 KEY[1] => B[0].ACLR
 KEY[1] => B[1].ACLR
 KEY[1] => B[2].ACLR
@@ -30,18 +89,6 @@ KEY[1] => A[8].ACLR
 KEY[1] => A[9].ACLR
 KEY[1] => A[10].ACLR
 KEY[1] => A[11].ACLR
-KEY[1] => BINARY[0].ACLR
-KEY[1] => BINARY[1].ACLR
-KEY[1] => BINARY[2].ACLR
-KEY[1] => BINARY[3].ACLR
-KEY[1] => BINARY[4].ACLR
-KEY[1] => BINARY[5].ACLR
-KEY[1] => BINARY[6].ACLR
-KEY[1] => BINARY[7].ACLR
-KEY[1] => BINARY[8].ACLR
-KEY[1] => BINARY[9].ACLR
-KEY[1] => BINARY[10].ACLR
-KEY[1] => BINARY[11].ACLR
 KEY[1] => COUNT[31].ENA
 KEY[1] => COUNT[30].ENA
 KEY[1] => COUNT[29].ENA
@@ -74,48 +121,16 @@ KEY[1] => COUNT[3].ENA
 KEY[1] => COUNT[2].ENA
 KEY[1] => COUNT[1].ENA
 KEY[1] => COUNT[0].ENA
-KEY[1] => OP[31].ENA
-KEY[1] => OP[30].ENA
-KEY[1] => OP[29].ENA
-KEY[1] => OP[28].ENA
-KEY[1] => OP[27].ENA
-KEY[1] => OP[26].ENA
-KEY[1] => OP[25].ENA
-KEY[1] => OP[24].ENA
-KEY[1] => OP[23].ENA
-KEY[1] => OP[22].ENA
-KEY[1] => OP[21].ENA
-KEY[1] => OP[20].ENA
-KEY[1] => OP[19].ENA
-KEY[1] => OP[18].ENA
-KEY[1] => OP[17].ENA
-KEY[1] => OP[16].ENA
-KEY[1] => OP[15].ENA
-KEY[1] => OP[14].ENA
-KEY[1] => OP[13].ENA
-KEY[1] => OP[12].ENA
-KEY[1] => OP[11].ENA
-KEY[1] => OP[10].ENA
-KEY[1] => OP[9].ENA
-KEY[1] => OP[8].ENA
-KEY[1] => OP[7].ENA
-KEY[1] => OP[6].ENA
-KEY[1] => OP[5].ENA
-KEY[1] => OP[4].ENA
-KEY[1] => OP[3].ENA
-KEY[1] => OP[2].ENA
-KEY[1] => OP[1].ENA
-KEY[1] => OP[0].ENA
 KEY[2] => ~NO_FANOUT~
 KEY[3] => ~NO_FANOUT~
-SW[0] => ~NO_FANOUT~
-SW[1] => ~NO_FANOUT~
-SW[2] => ~NO_FANOUT~
-SW[3] => ~NO_FANOUT~
-SW[4] => ~NO_FANOUT~
-SW[5] => ~NO_FANOUT~
-SW[6] => ~NO_FANOUT~
-SW[7] => ~NO_FANOUT~
+SW[0] => PWM:controlador.DUTY[0]
+SW[1] => PWM:controlador.DUTY[1]
+SW[2] => PWM:controlador.DUTY[2]
+SW[3] => PWM:controlador.DUTY[3]
+SW[4] => PWM:controlador.DUTY[4]
+SW[5] => PWM:controlador.DUTY[5]
+SW[6] => PWM:controlador.DUTY[6]
+SW[7] => PWM:controlador.DUTY[7]
 SW[8] => ~NO_FANOUT~
 SW[9] => ~NO_FANOUT~
 HEX0[0] <= conv_7seg:hexseg0.SEG[0]
@@ -154,16 +169,16 @@ LEDG[4] <= BINARY[11].DB_MAX_OUTPUT_PORT_TYPE
 LEDG[5] <= BINARY[11].DB_MAX_OUTPUT_PORT_TYPE
 LEDG[6] <= BINARY[11].DB_MAX_OUTPUT_PORT_TYPE
 LEDG[7] <= BINARY[11].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[0] <= testaSomador:somador.COUT
-LEDR[1] <= testaSomador:somador.COUT
-LEDR[2] <= testaSomador:somador.COUT
-LEDR[3] <= testaSomador:somador.COUT
-LEDR[4] <= testaSomador:somador.COUT
-LEDR[5] <= testaSomador:somador.COUT
-LEDR[6] <= testaSomador:somador.COUT
-LEDR[7] <= testaSomador:somador.COUT
-LEDR[8] <= testaSomador:somador.COUT
-LEDR[9] <= testaSomador:somador.COUT
+LEDR[0] <= COUT.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[1] <= COUT.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[2] <= COUT.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[3] <= COUT.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[4] <= COUT.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[5] <= COUT.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[6] <= COUT.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[7] <= COUT.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[8] <= COUT.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[9] <= COUT.DB_MAX_OUTPUT_PORT_TYPE
 PS2_DAT <> kbdex_ctrl:kbd_ctrl.PS2_DATA
 PS2_CLK <> kbdex_ctrl:kbd_ctrl.PS2_CLK
 
@@ -502,759 +517,42 @@ ENTRADA[2] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 ENTRADA[3] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|calculadora|TestaSomador:somador
-A[0] => X[0].DATAA
-A[0] => somadorBinarioParalelo:somador.A[0]
-A[1] => X[1].DATAA
-A[1] => somadorBinarioParalelo:somador.A[1]
-A[2] => X[2].DATAA
-A[2] => somadorBinarioParalelo:somador.A[2]
-A[3] => X[3].DATAA
-A[3] => somadorBinarioParalelo:somador.A[3]
-A[4] => X[4].DATAA
-A[4] => somadorBinarioParalelo:somador.A[4]
-A[5] => X[5].DATAA
-A[5] => somadorBinarioParalelo:somador.A[5]
-A[6] => X[6].DATAA
-A[6] => somadorBinarioParalelo:somador.A[6]
-A[7] => X[7].DATAA
-A[7] => somadorBinarioParalelo:somador.A[7]
-A[8] => X[8].DATAA
-A[8] => somadorBinarioParalelo:somador.A[8]
-A[9] => X[9].DATAA
-A[9] => somadorBinarioParalelo:somador.A[9]
-A[10] => X[10].DATAA
-A[10] => somadorBinarioParalelo:somador.A[10]
-A[11] => X[11].OUTPUTSELECT
-A[11] => X[10].OUTPUTSELECT
-A[11] => X[9].OUTPUTSELECT
-A[11] => X[8].OUTPUTSELECT
-A[11] => X[7].OUTPUTSELECT
-A[11] => X[6].OUTPUTSELECT
-A[11] => X[5].OUTPUTSELECT
-A[11] => X[4].OUTPUTSELECT
-A[11] => X[3].OUTPUTSELECT
-A[11] => X[2].OUTPUTSELECT
-A[11] => X[1].OUTPUTSELECT
-A[11] => X[0].OUTPUTSELECT
-A[11] => COUT.IN0
-A[11] => somadorBinarioParalelo:somador.A[11]
-A[11] => COUT.IN0
-B[0] => Y[0].DATAA
-B[0] => somadorBinarioParalelo:somador.B[0]
-B[1] => Y[1].DATAA
-B[1] => somadorBinarioParalelo:somador.B[1]
-B[2] => Y[2].DATAA
-B[2] => somadorBinarioParalelo:somador.B[2]
-B[3] => Y[3].DATAA
-B[3] => somadorBinarioParalelo:somador.B[3]
-B[4] => Y[4].DATAA
-B[4] => somadorBinarioParalelo:somador.B[4]
-B[5] => Y[5].DATAA
-B[5] => somadorBinarioParalelo:somador.B[5]
-B[6] => Y[6].DATAA
-B[6] => somadorBinarioParalelo:somador.B[6]
-B[7] => Y[7].DATAA
-B[7] => somadorBinarioParalelo:somador.B[7]
-B[8] => Y[8].DATAA
-B[8] => somadorBinarioParalelo:somador.B[8]
-B[9] => Y[9].DATAA
-B[9] => somadorBinarioParalelo:somador.B[9]
-B[10] => Y[10].DATAA
-B[10] => somadorBinarioParalelo:somador.B[10]
-B[11] => Y[11].OUTPUTSELECT
-B[11] => Y[10].OUTPUTSELECT
-B[11] => Y[9].OUTPUTSELECT
-B[11] => Y[8].OUTPUTSELECT
-B[11] => Y[7].OUTPUTSELECT
-B[11] => Y[6].OUTPUTSELECT
-B[11] => Y[5].OUTPUTSELECT
-B[11] => Y[4].OUTPUTSELECT
-B[11] => Y[3].OUTPUTSELECT
-B[11] => Y[2].OUTPUTSELECT
-B[11] => Y[1].OUTPUTSELECT
-B[11] => Y[0].OUTPUTSELECT
-B[11] => COUT.IN1
-B[11] => somadorBinarioParalelo:somador.B[11]
-B[11] => COUT.IN1
-S[0] <= somadorBinarioParalelo:somador.S[0]
-S[1] <= somadorBinarioParalelo:somador.S[1]
-S[2] <= somadorBinarioParalelo:somador.S[2]
-S[3] <= somadorBinarioParalelo:somador.S[3]
-S[4] <= somadorBinarioParalelo:somador.S[4]
-S[5] <= somadorBinarioParalelo:somador.S[5]
-S[6] <= somadorBinarioParalelo:somador.S[6]
-S[7] <= somadorBinarioParalelo:somador.S[7]
-S[8] <= somadorBinarioParalelo:somador.S[8]
-S[9] <= somadorBinarioParalelo:somador.S[9]
-S[10] <= somadorBinarioParalelo:somador.S[10]
-S[11] <= somadorBinarioParalelo:somador.S[11]
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:X1
-A[0] => somadorCompleto:ABC:0:SOMA.A
-A[1] => somadorCompleto:ABC:1:SOMA.A
-A[2] => somadorCompleto:ABC:2:SOMA.A
-A[3] => somadorCompleto:ABC:3:SOMA.A
-A[4] => somadorCompleto:ABC:4:SOMA.A
-A[5] => somadorCompleto:ABC:5:SOMA.A
-A[6] => somadorCompleto:ABC:6:SOMA.A
-A[7] => somadorCompleto:ABC:7:SOMA.A
-A[8] => somadorCompleto:ABC:8:SOMA.A
-A[9] => somadorCompleto:ABC:9:SOMA.A
-A[10] => somadorCompleto:ABC:10:SOMA.A
-A[11] => somadorCompleto:ABC:11:SOMA.A
-B[0] => somadorCompleto:ABC:0:SOMA.B
-B[1] => somadorCompleto:ABC:1:SOMA.B
-B[2] => somadorCompleto:ABC:2:SOMA.B
-B[3] => somadorCompleto:ABC:3:SOMA.B
-B[4] => somadorCompleto:ABC:4:SOMA.B
-B[5] => somadorCompleto:ABC:5:SOMA.B
-B[6] => somadorCompleto:ABC:6:SOMA.B
-B[7] => somadorCompleto:ABC:7:SOMA.B
-B[8] => somadorCompleto:ABC:8:SOMA.B
-B[9] => somadorCompleto:ABC:9:SOMA.B
-B[10] => somadorCompleto:ABC:10:SOMA.B
-B[11] => somadorCompleto:ABC:11:SOMA.B
-CIN => somadorCompleto:ABC:0:SOMA.CIN
-S[0] <= somadorCompleto:ABC:0:SOMA.S
-S[1] <= somadorCompleto:ABC:1:SOMA.S
-S[2] <= somadorCompleto:ABC:2:SOMA.S
-S[3] <= somadorCompleto:ABC:3:SOMA.S
-S[4] <= somadorCompleto:ABC:4:SOMA.S
-S[5] <= somadorCompleto:ABC:5:SOMA.S
-S[6] <= somadorCompleto:ABC:6:SOMA.S
-S[7] <= somadorCompleto:ABC:7:SOMA.S
-S[8] <= somadorCompleto:ABC:8:SOMA.S
-S[9] <= somadorCompleto:ABC:9:SOMA.S
-S[10] <= somadorCompleto:ABC:10:SOMA.S
-S[11] <= somadorCompleto:ABC:11:SOMA.S
-COUT <= somadorCompleto:ABC:11:SOMA.COUT
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:X1|somadorCompleto:\ABC:0:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:X1|somadorCompleto:\ABC:1:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:X1|somadorCompleto:\ABC:2:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:X1|somadorCompleto:\ABC:3:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:X1|somadorCompleto:\ABC:4:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:X1|somadorCompleto:\ABC:5:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:X1|somadorCompleto:\ABC:6:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:X1|somadorCompleto:\ABC:7:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:X1|somadorCompleto:\ABC:8:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:X1|somadorCompleto:\ABC:9:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:X1|somadorCompleto:\ABC:10:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:X1|somadorCompleto:\ABC:11:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:Y1
-A[0] => somadorCompleto:ABC:0:SOMA.A
-A[1] => somadorCompleto:ABC:1:SOMA.A
-A[2] => somadorCompleto:ABC:2:SOMA.A
-A[3] => somadorCompleto:ABC:3:SOMA.A
-A[4] => somadorCompleto:ABC:4:SOMA.A
-A[5] => somadorCompleto:ABC:5:SOMA.A
-A[6] => somadorCompleto:ABC:6:SOMA.A
-A[7] => somadorCompleto:ABC:7:SOMA.A
-A[8] => somadorCompleto:ABC:8:SOMA.A
-A[9] => somadorCompleto:ABC:9:SOMA.A
-A[10] => somadorCompleto:ABC:10:SOMA.A
-A[11] => somadorCompleto:ABC:11:SOMA.A
-B[0] => somadorCompleto:ABC:0:SOMA.B
-B[1] => somadorCompleto:ABC:1:SOMA.B
-B[2] => somadorCompleto:ABC:2:SOMA.B
-B[3] => somadorCompleto:ABC:3:SOMA.B
-B[4] => somadorCompleto:ABC:4:SOMA.B
-B[5] => somadorCompleto:ABC:5:SOMA.B
-B[6] => somadorCompleto:ABC:6:SOMA.B
-B[7] => somadorCompleto:ABC:7:SOMA.B
-B[8] => somadorCompleto:ABC:8:SOMA.B
-B[9] => somadorCompleto:ABC:9:SOMA.B
-B[10] => somadorCompleto:ABC:10:SOMA.B
-B[11] => somadorCompleto:ABC:11:SOMA.B
-CIN => somadorCompleto:ABC:0:SOMA.CIN
-S[0] <= somadorCompleto:ABC:0:SOMA.S
-S[1] <= somadorCompleto:ABC:1:SOMA.S
-S[2] <= somadorCompleto:ABC:2:SOMA.S
-S[3] <= somadorCompleto:ABC:3:SOMA.S
-S[4] <= somadorCompleto:ABC:4:SOMA.S
-S[5] <= somadorCompleto:ABC:5:SOMA.S
-S[6] <= somadorCompleto:ABC:6:SOMA.S
-S[7] <= somadorCompleto:ABC:7:SOMA.S
-S[8] <= somadorCompleto:ABC:8:SOMA.S
-S[9] <= somadorCompleto:ABC:9:SOMA.S
-S[10] <= somadorCompleto:ABC:10:SOMA.S
-S[11] <= somadorCompleto:ABC:11:SOMA.S
-COUT <= somadorCompleto:ABC:11:SOMA.COUT
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:Y1|somadorCompleto:\ABC:0:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:Y1|somadorCompleto:\ABC:1:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:Y1|somadorCompleto:\ABC:2:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:Y1|somadorCompleto:\ABC:3:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:Y1|somadorCompleto:\ABC:4:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:Y1|somadorCompleto:\ABC:5:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:Y1|somadorCompleto:\ABC:6:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:Y1|somadorCompleto:\ABC:7:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:Y1|somadorCompleto:\ABC:8:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:Y1|somadorCompleto:\ABC:9:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:Y1|somadorCompleto:\ABC:10:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:Y1|somadorCompleto:\ABC:11:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:somador
-A[0] => somadorCompleto:ABC:0:SOMA.A
-A[1] => somadorCompleto:ABC:1:SOMA.A
-A[2] => somadorCompleto:ABC:2:SOMA.A
-A[3] => somadorCompleto:ABC:3:SOMA.A
-A[4] => somadorCompleto:ABC:4:SOMA.A
-A[5] => somadorCompleto:ABC:5:SOMA.A
-A[6] => somadorCompleto:ABC:6:SOMA.A
-A[7] => somadorCompleto:ABC:7:SOMA.A
-A[8] => somadorCompleto:ABC:8:SOMA.A
-A[9] => somadorCompleto:ABC:9:SOMA.A
-A[10] => somadorCompleto:ABC:10:SOMA.A
-A[11] => somadorCompleto:ABC:11:SOMA.A
-B[0] => somadorCompleto:ABC:0:SOMA.B
-B[1] => somadorCompleto:ABC:1:SOMA.B
-B[2] => somadorCompleto:ABC:2:SOMA.B
-B[3] => somadorCompleto:ABC:3:SOMA.B
-B[4] => somadorCompleto:ABC:4:SOMA.B
-B[5] => somadorCompleto:ABC:5:SOMA.B
-B[6] => somadorCompleto:ABC:6:SOMA.B
-B[7] => somadorCompleto:ABC:7:SOMA.B
-B[8] => somadorCompleto:ABC:8:SOMA.B
-B[9] => somadorCompleto:ABC:9:SOMA.B
-B[10] => somadorCompleto:ABC:10:SOMA.B
-B[11] => somadorCompleto:ABC:11:SOMA.B
-CIN => somadorCompleto:ABC:0:SOMA.CIN
-S[0] <= somadorCompleto:ABC:0:SOMA.S
-S[1] <= somadorCompleto:ABC:1:SOMA.S
-S[2] <= somadorCompleto:ABC:2:SOMA.S
-S[3] <= somadorCompleto:ABC:3:SOMA.S
-S[4] <= somadorCompleto:ABC:4:SOMA.S
-S[5] <= somadorCompleto:ABC:5:SOMA.S
-S[6] <= somadorCompleto:ABC:6:SOMA.S
-S[7] <= somadorCompleto:ABC:7:SOMA.S
-S[8] <= somadorCompleto:ABC:8:SOMA.S
-S[9] <= somadorCompleto:ABC:9:SOMA.S
-S[10] <= somadorCompleto:ABC:10:SOMA.S
-S[11] <= somadorCompleto:ABC:11:SOMA.S
-COUT <= somadorCompleto:ABC:11:SOMA.COUT
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:0:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:1:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:2:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:3:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:4:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:5:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:6:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:7:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:8:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:9:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:10:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculadora|TestaSomador:somador|somadorBinarioParalelo:somador|somadorCompleto:\ABC:11:SOMA
-A => X3.IN0
-A => X4.IN0
-A => S.IN1
-B => X1.IN0
-B => X2.IN0
-B => X3.IN1
-CIN => X1.IN1
-CIN => X2.IN1
-CIN => X4.IN1
-S <= S.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
 |calculadora|binary_to_bcd:bin2bcd
-BINARY[0] => BCD_UNI[0].DATAIN
-BINARY[1] => LessThan15.IN8
-BINARY[1] => Add15.IN8
-BINARY[1] => BCD.DATAA
-BINARY[2] => LessThan12.IN8
-BINARY[2] => Add12.IN8
-BINARY[2] => BCD.DATAA
-BINARY[3] => LessThan9.IN8
-BINARY[3] => Add9.IN8
-BINARY[3] => BCD.DATAA
-BINARY[4] => LessThan7.IN8
-BINARY[4] => Add7.IN8
-BINARY[4] => BCD.DATAA
-BINARY[5] => LessThan5.IN8
-BINARY[5] => Add5.IN8
-BINARY[5] => BCD.DATAA
-BINARY[6] => LessThan3.IN8
-BINARY[6] => Add3.IN8
-BINARY[6] => BCD.DATAA
-BINARY[7] => LessThan2.IN8
-BINARY[7] => Add2.IN8
-BINARY[7] => BCD.DATAA
-BINARY[8] => LessThan1.IN8
-BINARY[8] => Add1.IN8
-BINARY[8] => BCD.DATAA
-BINARY[9] => LessThan0.IN6
-BINARY[9] => Add0.IN6
-BINARY[9] => BCD.DATAA
-BINARY[10] => LessThan0.IN5
-BINARY[10] => Add0.IN5
-BINARY[10] => BCD.DATAA
-BINARY[11] => LessThan0.IN4
-BINARY[11] => Add0.IN4
-BINARY[11] => BCD.DATAA
-BCD_UNI[0] <= BINARY[0].DB_MAX_OUTPUT_PORT_TYPE
+BINARY[0] => TEMP.DATAB
+BINARY[0] => Add0.IN24
+BINARY[1] => TEMP.DATAB
+BINARY[1] => Add0.IN23
+BINARY[2] => TEMP.DATAB
+BINARY[2] => Add0.IN22
+BINARY[3] => TEMP.DATAB
+BINARY[3] => Add0.IN21
+BINARY[4] => TEMP.DATAB
+BINARY[4] => Add0.IN20
+BINARY[5] => TEMP.DATAB
+BINARY[5] => Add0.IN19
+BINARY[6] => TEMP.DATAB
+BINARY[6] => Add0.IN18
+BINARY[7] => TEMP.DATAB
+BINARY[7] => Add0.IN17
+BINARY[8] => TEMP.DATAB
+BINARY[8] => Add0.IN16
+BINARY[9] => TEMP.DATAB
+BINARY[9] => Add0.IN15
+BINARY[10] => TEMP.DATAB
+BINARY[10] => Add0.IN14
+BINARY[11] => TEMP.OUTPUTSELECT
+BINARY[11] => TEMP.OUTPUTSELECT
+BINARY[11] => TEMP.OUTPUTSELECT
+BINARY[11] => TEMP.OUTPUTSELECT
+BINARY[11] => TEMP.OUTPUTSELECT
+BINARY[11] => TEMP.OUTPUTSELECT
+BINARY[11] => TEMP.OUTPUTSELECT
+BINARY[11] => TEMP.OUTPUTSELECT
+BINARY[11] => TEMP.OUTPUTSELECT
+BINARY[11] => TEMP.OUTPUTSELECT
+BINARY[11] => TEMP.OUTPUTSELECT
+BINARY[11] => Add0.IN13
+BCD_UNI[0] <= TEMP.DB_MAX_OUTPUT_PORT_TYPE
 BCD_UNI[1] <= BCD.DB_MAX_OUTPUT_PORT_TYPE
 BCD_UNI[2] <= BCD.DB_MAX_OUTPUT_PORT_TYPE
 BCD_UNI[3] <= BCD.DB_MAX_OUTPUT_PORT_TYPE
@@ -1268,8 +566,125 @@ BCD_HUN[2] <= BCD.DB_MAX_OUTPUT_PORT_TYPE
 BCD_HUN[3] <= BCD.DB_MAX_OUTPUT_PORT_TYPE
 BCD_THO[0] <= BCD.DB_MAX_OUTPUT_PORT_TYPE
 BCD_THO[1] <= BCD.DB_MAX_OUTPUT_PORT_TYPE
-BCD_THO[2] <= BCD.DB_MAX_OUTPUT_PORT_TYPE
+BCD_THO[2] <= <GND>
 BCD_THO[3] <= <GND>
+
+
+|calculadora|PWM:controlador
+CLOCK => COUTP[0]~reg0.CLK
+CLOCK => COUTP[1]~reg0.CLK
+CLOCK => COUTP[2]~reg0.CLK
+CLOCK => COUTP[3]~reg0.CLK
+CLOCK => COUTP[4]~reg0.CLK
+CLOCK => COUTP[5]~reg0.CLK
+CLOCK => COUTP[6]~reg0.CLK
+CLOCK => COUTP[7]~reg0.CLK
+CLOCK => COUTP[8]~reg0.CLK
+CLOCK => COUTP[9]~reg0.CLK
+CLOCK => COUTP[10]~reg0.CLK
+CLOCK => COUTP[11]~reg0.CLK
+CLOCK => COUTP[12]~reg0.CLK
+CLOCK => COUTP[13]~reg0.CLK
+CLOCK => COUTP[14]~reg0.CLK
+CLOCK => COUTP[15]~reg0.CLK
+CLOCK => COUNT[0].CLK
+CLOCK => COUNT[1].CLK
+CLOCK => COUNT[2].CLK
+CLOCK => COUNT[3].CLK
+CLOCK => COUNT[4].CLK
+CLOCK => COUNT[5].CLK
+CLOCK => COUNT[6].CLK
+CLOCK => COUNT[7].CLK
+RESET => COUTP[15].IN0
+RESET => COUTP[0]~reg0.PRESET
+RESET => COUTP[1]~reg0.PRESET
+RESET => COUTP[2]~reg0.PRESET
+RESET => COUTP[3]~reg0.PRESET
+RESET => COUTP[4]~reg0.PRESET
+RESET => COUTP[5]~reg0.PRESET
+RESET => COUTP[6]~reg0.PRESET
+RESET => COUTP[7]~reg0.PRESET
+RESET => COUTP[8]~reg0.PRESET
+RESET => COUTP[9]~reg0.PRESET
+RESET => COUTP[10]~reg0.PRESET
+RESET => COUTP[11]~reg0.PRESET
+RESET => COUTP[12]~reg0.PRESET
+RESET => COUTP[13]~reg0.PRESET
+RESET => COUTP[14]~reg0.PRESET
+RESET => COUTP[15]~reg0.PRESET
+RESET => COUNT[0].ACLR
+RESET => COUNT[1].ACLR
+RESET => COUNT[2].ACLR
+RESET => COUNT[3].ACLR
+RESET => COUNT[4].ACLR
+RESET => COUNT[5].ACLR
+RESET => COUNT[6].ACLR
+RESET => COUNT[7].ACLR
+ENABLE => COUTP[15].IN1
+ENABLE => COUNT[7].ENA
+ENABLE => COUNT[6].ENA
+ENABLE => COUNT[5].ENA
+ENABLE => COUNT[4].ENA
+ENABLE => COUNT[3].ENA
+ENABLE => COUNT[2].ENA
+ENABLE => COUNT[1].ENA
+ENABLE => COUNT[0].ENA
+DUTY[0] => LessThan0.IN8
+DUTY[1] => LessThan0.IN7
+DUTY[2] => LessThan0.IN6
+DUTY[3] => LessThan0.IN5
+DUTY[4] => LessThan0.IN4
+DUTY[5] => LessThan0.IN3
+DUTY[6] => LessThan0.IN2
+DUTY[7] => LessThan0.IN1
+CIN[0] => COUTP.DATAB
+CIN[0] => COUTP[0]~reg0.ADATA
+CIN[1] => COUTP.DATAB
+CIN[1] => COUTP[1]~reg0.ADATA
+CIN[2] => COUTP.DATAB
+CIN[2] => COUTP[2]~reg0.ADATA
+CIN[3] => COUTP.DATAB
+CIN[3] => COUTP[3]~reg0.ADATA
+CIN[4] => COUTP.DATAB
+CIN[4] => COUTP[4]~reg0.ADATA
+CIN[5] => COUTP.DATAB
+CIN[5] => COUTP[5]~reg0.ADATA
+CIN[6] => COUTP.DATAB
+CIN[6] => COUTP[6]~reg0.ADATA
+CIN[7] => COUTP.DATAB
+CIN[7] => COUTP[7]~reg0.ADATA
+CIN[8] => COUTP.DATAB
+CIN[8] => COUTP[8]~reg0.ADATA
+CIN[9] => COUTP.DATAB
+CIN[9] => COUTP[9]~reg0.ADATA
+CIN[10] => COUTP.DATAB
+CIN[10] => COUTP[10]~reg0.ADATA
+CIN[11] => COUTP.DATAB
+CIN[11] => COUTP[11]~reg0.ADATA
+CIN[12] => COUTP.DATAB
+CIN[12] => COUTP[12]~reg0.ADATA
+CIN[13] => COUTP.DATAB
+CIN[13] => COUTP[13]~reg0.ADATA
+CIN[14] => COUTP.DATAB
+CIN[14] => COUTP[14]~reg0.ADATA
+CIN[15] => COUTP.DATAB
+CIN[15] => COUTP[15]~reg0.ADATA
+COUTP[0] <= COUTP[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+COUTP[1] <= COUTP[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+COUTP[2] <= COUTP[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+COUTP[3] <= COUTP[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+COUTP[4] <= COUTP[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+COUTP[5] <= COUTP[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+COUTP[6] <= COUTP[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+COUTP[7] <= COUTP[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+COUTP[8] <= COUTP[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+COUTP[9] <= COUTP[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+COUTP[10] <= COUTP[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+COUTP[11] <= COUTP[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+COUTP[12] <= COUTP[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+COUTP[13] <= COUTP[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+COUTP[14] <= COUTP[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+COUTP[15] <= COUTP[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |calculadora|conv_7seg:hexseg0
