@@ -3,8 +3,6 @@ Projeto de uma Calculadora na linguagem VHDL.
 
 ## Introdução
 
----
-
 ### Equipamentos Utilizados no Projeto
 
 * Teclado PS2
@@ -12,8 +10,6 @@ Projeto de uma Calculadora na linguagem VHDL.
 
 ### Software Utilizado no Projeto
 * Quartus II 13.0sp1
-
----
 
 ## Funcionalidades
 
@@ -32,8 +28,6 @@ Projeto de uma Calculadora na linguagem VHDL.
 
 * Entrada de dados pelo teclado com interface PS2.
 
----
-
 ## Manual de Utilização
 
 Entre com um operando de até 12 bits (-2048 até 2047), então entre com um operador (+ ou -) e pressione “enter” para ver o resultado.
@@ -49,8 +43,6 @@ Caso o número seja negativo, luzes LEDG0 ao LEDG7 irão acender.
 Caso a operação realizada resulte em overflow ou underflow, luzes LEDR0 ao LEDR9 irão acender, e será necessário resetar a placa.
 
 Aperte KEY1 para resetar a placa.
-
----
 
 ## Organização do Projeto
 
@@ -102,8 +94,7 @@ Para utilização do teclado foi importado uma biblioteca compostas pelos seguin
         kbdex_ctrl.vhd
         keyboard.vhd
         ps2_iobase.vhd
----
-
+ 
 ## Algoritmos implementados, porém não integrados
 
 ### testaSomador.vhd
@@ -120,13 +111,9 @@ Para utilização do teclado foi importado uma biblioteca compostas pelos seguin
 
 Pela falta de integração, hoje o projeto executa sua soma de forma interna com a biblioteca STD_LOGIC_UNSIGNED.
 
----
-
 ## Pin Planner
 
 Ver .pdf disponível na raiz do projeto.
-
----
 
 ## Problemas Identificados e Não Resolvidos
 
