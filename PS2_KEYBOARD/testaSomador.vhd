@@ -27,9 +27,13 @@ ARCHITECTURE funcionamento OF TestaSomador IS
 	SIGNAL OVERFLOW : STD_LOGIC;
 	
 	BEGIN
+
+	-- CHECA POR OVERFLOW
 						
 	COUT <= (A(N-1) AND B(N-1) AND NOT(S(N-1))) OR (NOT(A(N-1)) AND NOT(B(N-1)) AND S(N-1));
 	
+	-- EXECUTA A SOMA NO COMPONENTE CORRESPONDENTE
+
 	somador: somadorBinarioParalelo GENERIC MAP(N) PORT MAP (
 		A, B, '0',
 		S, OVERFLOW

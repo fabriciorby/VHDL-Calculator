@@ -92,7 +92,6 @@ O projeto foi dividido em 8 arquivos .vhd diferentes.
 Para utilização do teclado foi importado uma biblioteca compostas pelos seguintes arquivos:
 
         kbdex_ctrl.vhd
-        keyboard.vhd
         ps2_iobase.vhd
  
 ## Algoritmos implementados, porém não integrados

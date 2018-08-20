@@ -11,7 +11,6 @@ ENTITY CALCULADORA IS
 		CLOCK_24	: 	IN	STD_LOGIC_VECTOR (1 DOWNTO 0);	--	24 MHz
 		CLOCK_27	:	IN	STD_LOGIC_VECTOR (1 DOWNTO 0);	--	27 MHz
 		CLOCK_50	: 	IN	STD_LOGIC;						--	50 MHz
-		-- CLOCKTAP	: 	OUT	STD_LOGIC;
 		
 		------------------------	Push Button		------------------------
 		KEY 	:		IN	STD_LOGIC_VECTOR (3 DOWNTO 0);		--	PUSHBUTTON[3:0]
@@ -79,16 +78,16 @@ ARCHITECTURE funcionamento OF CALCULADORA IS
         );
 	END COMPONENT;
 	
-	-- SOMADOR BINARIO PARALELO
-	COMPONENT testaSomador
-		GENERIC (N : INTEGER);
-		PORT( 
-			A, B	: IN  STD_LOGIC_VECTOR (N-1 DOWNTO 0);
-			S		: OUT STD_LOGIC_VECTOR (N-1 DOWNTO 0);
-			COUT	: OUT STD_LOGIC
-		);
-	END COMPONENT;
+	-- SOMADOR BINARIO PARALELO (NÃO INTEGRADO)
 
+	-- COMPONENT testaSomador
+	-- 	GENERIC (N : INTEGER);
+	-- 	PORT( 
+	-- 		A, B	: IN  STD_LOGIC_VECTOR (N-1 DOWNTO 0);
+	-- 		S		: OUT STD_LOGIC_VECTOR (N-1 DOWNTO 0);
+	-- 		COUT	: OUT STD_LOGIC
+	-- 	);
+	-- END COMPONENT;
 
 	-- BIBLIOTECA PARA CONTROLE DO TECLADO
 	COMPONENT kbdex_ctrl
@@ -108,12 +107,9 @@ ARCHITECTURE funcionamento OF CALCULADORA IS
 	END COMPONENT;
 	
 	-- DECLARACAO DE SIGNALS
-	
-	CONSTANT VAZIO : STD_LOGIC_VECTOR (11 DOWNTO 0) := (OTHERS => '0');
-	
+		
 	SIGNAL COUT 	: STD_LOGIC := '0';
 	SIGNAL COUTP 	: STD_LOGIC_VECTOR (15 DOWNTO 0);
-	SIGNAL SOMA 	: STD_LOGIC_VECTOR (11 DOWNTO 0) := VAZIO;
 	SIGNAL DUTY	: 	 STD_LOGIC_VECTOR(7 DOWNTO 0);
 	SIGNAL ENTRADA 	: STD_LOGIC_VECTOR (3 DOWNTO 0);
 	SIGNAL BINARY 	: STD_LOGIC_VECTOR (11 DOWNTO 0);
@@ -127,12 +123,14 @@ ARCHITECTURE funcionamento OF CALCULADORA IS
 
 	-- CONSTANTES DEFINIDAS EM conv_calc.vhd
 
-	CONSTANT SUM : STD_LOGIC_VECTOR (3 DOWNTO 0) := "1010";
-	CONSTANT SUB : STD_LOGIC_VECTOR (3 DOWNTO 0) := "1011";
-	CONSTANT MUL : STD_LOGIC_VECTOR (3 DOWNTO 0) := "1100";
-	CONSTANT DIV : STD_LOGIC_VECTOR (3 DOWNTO 0) := "1101";
-	CONSTANT ENT : STD_LOGIC_VECTOR (3 DOWNTO 0) := "1110";
-	CONSTANT BKS : STD_LOGIC_VECTOR (3 DOWNTO 0) := "1111";	
+	CONSTANT SUM : STD_LOGIC_VECTOR (3 DOWNTO 0) := "1010"; -- SOMA
+	CONSTANT SUB : STD_LOGIC_VECTOR (3 DOWNTO 0) := "1011"; -- SUBTRAÇÃO
+	CONSTANT MUL : STD_LOGIC_VECTOR (3 DOWNTO 0) := "1100"; -- MULTIPLICAÇÃO
+	CONSTANT DIV : STD_LOGIC_VECTOR (3 DOWNTO 0) := "1101"; -- DIVISÃO
+	CONSTANT ENT : STD_LOGIC_VECTOR (3 DOWNTO 0) := "1110"; -- ENTER
+	CONSTANT BKS : STD_LOGIC_VECTOR (3 DOWNTO 0) := "1111";	-- BACKSPACE
+
+	CONSTANT VAZIO : STD_LOGIC_VECTOR (11 DOWNTO 0) := (OTHERS => '0');
 
 	BEGIN
 
@@ -183,43 +181,19 @@ ARCHITECTURE funcionamento OF CALCULADORA IS
 						B := VAZIO;
 					END IF;
 
-
 				WHEN MUL =>
 
 					COUNT := 0;
 					OP := 3;
 
-					IF (A = VAZIO) THEN 
-						A := BINARY;
-						--BINARY <= VAZIO;
-						C := A;
-						B := VAZIO;
-					ELSIF (B = VAZIO) THEN
-						B := BINARY;
-						--TEMP := A * B;
-						BINARY <= TEMP (11 DOWNTO 0);
-						C := B;
-						A := VAZIO;
-						B := VAZIO;
-					END IF;
+					-- CÓDIGO DE MULTIPLICAÇÃO DELETADO
 
 				WHEN DIV =>
 
 					COUNT := 0;
 					OP := 4;
 
-					IF (A = VAZIO) THEN 
-						A := BINARY;
-						--BINARY <= VAZIO;
-						C := A;
-						B := VAZIO;
-					ELSIF (B = VAZIO) THEN
-						B := BINARY;
-						--BINARY <= A / B;
-						C := B;
-						A := VAZIO;
-						B := VAZIO;
-					END IF;
+					-- CÓDIGO DE DIVISÃO DELETADO
 
 				WHEN ENT =>
 
@@ -234,8 +208,7 @@ ARCHITECTURE funcionamento OF CALCULADORA IS
 								D := C + BINARY;
 								IF (C(11) = '0') AND (BINARY(11) = '0') THEN 
 									IF D(11) = '1' THEN
-										--OVERFLOW
-										COUT <= '1';
+										COUT <= '1'; -- OVERFLOW
 									END IF;
 								END IF;
 								BINARY <= C + BINARY;
@@ -244,28 +217,27 @@ ARCHITECTURE funcionamento OF CALCULADORA IS
 								D := C - B;
 								IF (C(11) = '1') AND (B(11) = '0') THEN 
 									IF D(11) = '0' THEN
-										--UNDERFLOW
-										COUT <= '1';
+										COUT <= '1'; -- UNDERFLOW
 									END IF;
 								END IF;
 								BINARY <= C - B;
 								C := C - B;
 							WHEN 3 =>
-								--TEMP := BINARY * C;
-								BINARY <= TEMP (11 DOWNTO 0);
-								C := B;
+								-- CÓDIGO DE MULTIPLICAÇÃO DELETADO
 							WHEN 4 =>
-								--BINARY <= C / BINARY;
+								-- CÓDIGO DE DIVISÃO DELETADO
 							WHEN OTHERS =>
 					END CASE;
 					
 					A := VAZIO;
 					
 				WHEN BKS =>
-					IF NOT (COUNT = 0) THEN
-						--BINARY <= BINARY/10;
-						COUNT := COUNT - 1;
-					END IF;
+					-- CÓDIGO DE BACKSPACE NECESSITA DA DIVISÃO POR 10
+
+					-- IF NOT (COUNT = 0) THEN
+						-- BINARY <= BINARY/10;
+						-- COUNT := COUNT - 1;
+					-- END IF;
 				WHEN OTHERS =>
 					IF NOT (BINARY = VAZIO AND ENTRADA = "0000") THEN
 						CASE COUNT IS
@@ -275,8 +247,7 @@ ARCHITECTURE funcionamento OF CALCULADORA IS
 							WHEN 1 TO 3 =>
 								D := BINARY + BINARY + BINARY + BINARY + BINARY + BINARY + BINARY + BINARY + BINARY + BINARY + ENTRADA;
 								IF (D(11) = '1') THEN 
-									--OVERFLOW
-									COUT <= '1';
+									COUT <= '1'; -- OVERFLOW
 								END IF;
 								BINARY <= BINARY + BINARY + BINARY + BINARY + BINARY + BINARY + BINARY + BINARY + BINARY + BINARY + ENTRADA;
 								COUNT := COUNT + 1;
@@ -305,6 +276,8 @@ ARCHITECTURE funcionamento OF CALCULADORA IS
 	dig_calc: conv_calc PORT MAP (
 		key0(7 DOWNTO 0), ENTRADA
 	);
+
+	-- SOMADOR DE DOIS NÚMEROS BINÁRIOS (NÃO INTEGRADO)
 
 	--somador: testaSomador GENERIC MAP(12) PORT MAP (
 	--	A, B,

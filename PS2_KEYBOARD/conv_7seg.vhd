@@ -24,5 +24,5 @@ BEGIN
 					 "1000110" WHEN "1100", -- C
 					 "0100001" WHEN "1101", -- d
 					 "0000110" WHEN "1110", -- E
-					 "1111111" WHEN "1111"; -- F
+					 "1111111" WHEN "1111"; -- APAGADO
 END structural;
