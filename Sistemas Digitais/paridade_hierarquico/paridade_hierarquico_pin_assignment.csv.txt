@@ -1,5 +1,0 @@
-To,Location
-p,PIN_U22
-x1,PIN_L22
-x2,PIN_L21
-x3,PIN_M22

@@ -1,8 +1,0 @@
-
-State Machine - |maquinaMoore2|y
-Name y.E y.D y.C y.B y.A 
-y.A 0 0 0 0 0 
-y.B 0 0 0 1 1 
-y.C 0 0 1 0 1 
-y.D 0 1 0 0 1 
-y.E 1 0 0 0 1 
